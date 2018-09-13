@@ -20,6 +20,8 @@
 					
 					<div class="col-sm-4">
 						<h3>Follow Us</h3>
+						<img src="upload/facebook.png"/>
+						<img src="upload/google.png"/>
 					</div>
 				</div>
 			</div>

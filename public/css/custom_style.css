@@ -2,7 +2,10 @@
 	background: url("/upload/hp_big_img.jpg") no-repeat center; 
 	height: 300px;
 }
-?footer .cover {
+
+
+
+footer .cover {
 	background-color: #3C3D41;
 	
 }
@@ -10,4 +13,28 @@
 footer .row{
 	color: white;
 	list-style:none;
+	
 }
+
+header .header-menu{
+	padding-top:15px;
+	padding-bottom:15px;
+	border-bottom:1px solid black;
+}
+header .header-menu li{
+	display:inline;
+	padding-left:20px;
+}
+
+header .nav-menu {
+	margin-top:15px;
+	margin-left:150px;
+	margin-bottom:15px;
+}
+header .nav-menu li{
+	list-style: none;
+	display: inline;
+	padding-left:80px;
+}
+
+
