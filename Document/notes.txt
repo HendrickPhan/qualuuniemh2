@@ -34,3 +34,5 @@ setting file .env
 -thiết kế giao diện: 
 
 ...
+
+13/9 hungha join, test push
