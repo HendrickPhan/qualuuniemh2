@@ -36,3 +36,10 @@ setting file .env
 ...
 
 13/9 hungha join, test push
+
+
+13/9
+ new task: tạo footer cho page theo sample qualuuniemh2\Document\footer_sample.png
+ path: \qualuuniemh2\resources\views\footer.php
+
+
