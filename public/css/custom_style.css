@@ -2,3 +2,12 @@
 	background: url("/upload/hp_big_img.jpg") no-repeat center; 
 	height: 300px;
 }
+?footer .cover {
+	background-color: #3C3D41;
+	
+}
+
+footer .row{
+	color: white;
+	list-style:none;
+}
