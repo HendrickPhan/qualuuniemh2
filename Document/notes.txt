@@ -1,0 +1,36 @@
+Website url: https://qualuuniemh2.000webhostapp.com/public
+bị dính public do chưa set vhost trên livesite được, tạm thời như vậy sẽ improve sau.
+
+https://www.000webhost.com/
+
+db:
+username = root
+pass = 123456
+localhost
+
+1. Cách chạy project:
+cài đặt xampp (7.2 up)
+cài đặt composer
+cài đặt vhost cho project
+	lưu ý là khi tạo vhost location sẽ chỉ vào thư mục public
+	vhost: qualuuniemh2.test
+chạy project
+
+setting file .env
+
+
+
+2. 1 số việc cần làm:
+
+
+-install laravel: sử dụng composer, tham khảo thêm page: https://laravel.com/docs/5.7/installation	//done 13/09
+-tạo page đơn giản với laravel	//done 13/09
+-upload lên livesite //
+
+
+-phân tích yêu cầu
+-thiết kế database
+	nên học cách sử dung migration để dễ quản lý db
+-thiết kế giao diện: 
+
+...
