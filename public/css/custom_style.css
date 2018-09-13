@@ -1,6 +1,9 @@
 html, body{
 	font-family:'Nunito', sans-serif;
 }
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Pacifico', cursive;
+}
 header .header-menu{
 	padding-top:15px;
 	padding-bottom:15px;
@@ -21,6 +24,10 @@ header .nav-menu li{
 	display: inline;
 	padding-left:80px;
 }
+footer{
+	margin-top: 20px;
+	
+}
 footer .cover {
 	background-color: #3C3D41;
 	
@@ -35,24 +42,80 @@ footer .row{
 	height: 300px;
 	position: relative;
 }
-
-.hp{
-	
-}
-.hp_fullwidth_img h3{
+.hp_fullwidth_img h2{
 	position: absolute;
-	font-family:sans-serif;
 	color: #000;
-	font-weight: 700;
+	font-weight: bold;
 	text-align: center;
-	background-color: rgb(255, 255, 255,0.8);
+	background-color: rgb(255, 255, 255,0.9);
 	width: fit-content;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	bottom: 20px;
+	bottom: 15px;
+	padding: 7px;
+}
+#hp .section1{
+	padding-top: 50px;
+	text-align: center;
+	background-color: rgb(240, 240, 240);
+}
+.hp_s1_product{
+	position: relative;
+	text-align: center;
+}
+.hp_s1_product h4{
+    position: absolute;
+    top: 45%;
+	left: 0;
+	right: 0;
+	color: white;
+}
+.hp_s1_product img{
+	margin: 30px 0px;
+	width: 100%;
 }
 
+#hp .section2{
+padding-top: 50px;
+text-align: center;
 
+}
+#hp .section2 a{
+	color: #000;
+	
+}
+#hp .section2 a:hover{
+	text-decoration: none;
+	
+}
+.hp_s2_product img{
+	margin: 5px 0px;
+	width: 100%;
+}
+.rating{
+	font-size: 20px;
+	font-weight: bold;
+}
+.add_to_cart_btn{
+	color: #fff;
+}
 
+#hp .section3{
+	margin-top: 50px;
+	width: 100%;
+	background: url("/upload/1_1_TUNJhsa9DzVL1MGJ6AbQ.png") no-repeat center; 
+	background-size: cover;
+	height: 400px;
+	position: relative;
+	text-align: center;
+}
+#hp .section3 h1{
+  position: absolute;
+	top: 35%;
+	left: 0;
+	right: 0;
+	color: #fff;
+	font-size: 80px;
+}

@@ -8,12 +8,14 @@
 			
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 		
 		<!-- CSS -->
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 		<link href="{{ asset('css/custom_style.css') }}" rel="stylesheet">
 		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 		<script src="{{ asset('js/custom_js.js') }}"></script>
 		

@@ -45,3 +45,29 @@ setting file .env
 
  task 2: tham khảo page https://www.homesciencetools.com tạo header và main content.
  
+14/9
+ task 1: 
+	sửa lại header và footer, những cái link cần phải được đặt trong thẻ <a></a> 
+	thanh search chưa giống với sample
+	Lấy luôn các icon của sample
+	Design logo cho header
+	sửa margin padding footer
+ task 2:
+	Tham khảo https://pandagift.vn/shops/Qua-sinh-nhat/Moc-khoa-hinh-heo-737/
+	Liệt kê các chức năng mà website có thể có. VD: Liệt kê ra các món hàng, lọc các món hàng theo thể loại, mua hàng,....
+	Từ những chức năng liệt kê ra các đối tượng của website. VD: mặt hàng, thể loại, khách hàng,...
+	Liệt kê ra các màn hình mà người dùng thấy
+	Liệt kê ra các màn hình mà admin thấy để quản lý
+	Thống kê lại thành 1 file document để document. đặt tên sao cho dễ hiểu.
+	
+ task 3:
+	Từ doc task 2
+	Kể ra các thuộc tính (tên + kiểu dữ liệu)mà 1 mặt hàng có thể có. VD: Tên mặt hàng, giá, nơi sản xuất, ...
+	Kể ra các tag mà mặt hàng có thể có. VD: Móc khóa, tranh vẽ,...
+	Kể ra các thuộc tính mà  1 người dùng có thể có. VD: Tên đăng nhập, ....
+	Kể ra các thuộc tính cho từng đối tượng ở task2.
+	thống kê lại thành 1 file document để vào folder document
+ task 4:
+	Từ document ở task 3 thiết kế các table cho website
+	
+	
