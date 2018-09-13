@@ -11,8 +11,11 @@
 		
 		<!-- CSS -->
         <link href="/css/app.css" rel="stylesheet" type="text/css">
-		<!-- JS -->
 		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-		 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+		<link href="{{ asset('css/custom_style.css') }}" rel="stylesheet">
+		<!-- JS -->
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('js/custom_js.js') }}"></script>
+		
     </head>
     <body>

@@ -43,3 +43,5 @@ setting file .env
  path: \qualuuniemh2\resources\views\footer.php
 
 
+ task 2: tham khảo page https://www.homesciencetools.com tạo header và main content.
+ 
