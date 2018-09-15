@@ -45,7 +45,7 @@ setting file .env
 
  task 2: tham khảo page https://www.homesciencetools.com tạo header và main content.
  
-14/9
+15/9
  task 1: (done)
 	sửa lại header và footer, những cái link cần phải được đặt trong thẻ <a></a> 
 	thanh search chưa giống với sample
@@ -68,6 +68,33 @@ setting file .env
 	Kể ra các thuộc tính cho từng đối tượng ở task2.
 	thống kê lại thành 1 file document để vào folder document
  task 4:
-	Từ document ở task 3 thiết kế các table cho website
+	Update: Từ document 2 file Document/DB_1.JPG,DB_2.JPG  nghiên cứu tìm hiểu về migration để tạo db cho trang web.
+	Gợi ý các bước:
+	Vào mySql tạo 1 database mới có tên là qualuuniemh2_db.
+	Tham khảo video và tài liệu sau để tạo ra file migration: 
+		https://toidicode.com/migrations-trong-laravel-17.html	Đọc cái này để hiểu migration
+		https://www.youtube.com/watch?v=VxIRKDb9X1w	video hướng dẫn tạo file migration
+		https://laravel.com/docs/5.3/migrations	Trang chính, có toàn bộ thông tin, cần chú ý phần để hiểu rõ 2 function up và down, Columns 
+												Creating Colum, các kiểu dữ liệu.
+	Từ file migration: chạy lệnh php artisan migrate để tạo db
+		https://www.youtube.com/watch?v=iCpIsDDIKzQ	video hướng dẫn chạy migrate để tạo db
 	
-	
+16/9 
+ task 1: hoàn thành task 4 (15/9)
+ task 2: tạo seed data cho table user:
+ username: admin
+ password: 123456
+ email: admin@admin.com
+mấy field còn lại tùy
+ task 3: viết doc giải thích phần migration, seed và routes. Lưu lại file tên là  Giải thích.doc
+ 
+ task 4: Tìm hiểu về mô hình MVC là gì, MVC trong laravel như thế nào update vào Giải thích.doc. 
+ task 5: Tạo model, controller, service cho user và product. Liệt dối tường mà mình cần tạo thêm.
+17/9
+ task 1: làm layout cho trang loại mặt hàng.
+ task 2: làm layout cho trang 1 mặt hàng.
+ task 3: làm layout cho trang cart.
+ update lại file doc chú thích các màn hình nào đã hoàn thành.
+ 
+ 
+ 
