@@ -85,7 +85,7 @@
 		<div class="section3">
 			<a href="">
 			<h1>Tặng quà</h1>
-			</>
+			<a/>
 		</div>
 	</div>
 @include('footer')

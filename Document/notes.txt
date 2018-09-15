@@ -25,7 +25,7 @@ setting file .env
 
 -install laravel: sử dụng composer, tham khảo thêm page: https://laravel.com/docs/5.7/installation	//done 13/09
 -tạo page đơn giản với laravel	//done 13/09
--upload lên livesite //
+-upload lên livesite // https://www.000webhost.com/forum/t/deploy-laravel-project-into-000webhost-site/127323
 
 
 -phân tích yêu cầu
