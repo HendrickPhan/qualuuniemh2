@@ -1,4 +1,4 @@
-Website url: https://qualuuniemh2.000webhostapp.com/public
+﻿Website url: https://qualuuniemh2.000webhostapp.com/public
 bị dính public do chưa set vhost trên livesite được, tạm thời như vậy sẽ improve sau.
 
 https://www.000webhost.com/
@@ -46,13 +46,13 @@ setting file .env
  task 2: tham khảo page https://www.homesciencetools.com tạo header và main content.
  
 14/9
- task 1: 
+ task 1: (done)
 	sửa lại header và footer, những cái link cần phải được đặt trong thẻ <a></a> 
 	thanh search chưa giống với sample
 	Lấy luôn các icon của sample
-	Design logo cho header
+	3:04 PM 9/14/2018
 	sửa margin padding footer
- task 2:
+ task 2:(done)
 	Tham khảo https://pandagift.vn/shops/Qua-sinh-nhat/Moc-khoa-hinh-heo-737/
 	Liệt kê các chức năng mà website có thể có. VD: Liệt kê ra các món hàng, lọc các món hàng theo thể loại, mua hàng,....
 	Từ những chức năng liệt kê ra các đối tượng của website. VD: mặt hàng, thể loại, khách hàng,...
@@ -60,7 +60,7 @@ setting file .env
 	Liệt kê ra các màn hình mà admin thấy để quản lý
 	Thống kê lại thành 1 file document để document. đặt tên sao cho dễ hiểu.
 	
- task 3:
+ task 3:(done)
 	Từ doc task 2
 	Kể ra các thuộc tính (tên + kiểu dữ liệu)mà 1 mặt hàng có thể có. VD: Tên mặt hàng, giá, nơi sản xuất, ...
 	Kể ra các tag mà mặt hàng có thể có. VD: Móc khóa, tranh vẽ,...

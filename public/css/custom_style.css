@@ -13,7 +13,10 @@ header .header-menu li{
 	display:inline;
 	padding-left:20px;
 }
-
+header .header-menu li a{
+	text-decoration:none;
+	color: black;
+}
 header .nav-menu {
 	margin-top:15px;
 	margin-left:150px;
@@ -24,6 +27,23 @@ header .nav-menu li{
 	display: inline;
 	padding-left:80px;
 }
+header .nav-menu li a{
+	text-decoration:none;
+	color : black;
+}
+#searchproduct{
+	width:300px;
+	height:38px;
+}
+#searchbutton{
+	margin-top:-3px;
+}
+#search-menu{
+	margin-top:5px;
+}
+#info-menu{
+	margin-top:15px;
+}
 footer{
 	margin-top: 20px;
 	
@@ -32,10 +52,15 @@ footer .cover {
 	background-color: #3C3D41;
 	
 }
-
 footer .row{
 	color: white;
 	list-style:none;
+	padding-top:40px;
+	padding-bottom:20px;
+}
+footer .row li a{
+	text-decoration:none;
+	color:white;
 }
 .hp_fullwidth_img{
 	background: url("/upload/hp_big_img.jpg") no-repeat center; 
@@ -118,4 +143,57 @@ text-align: center;
 	right: 0;
 	color: #fff;
 	font-size: 80px;
+}
+
+#login{
+	position: relative;
+}
+#login .background{
+	opacity: 0.75;
+	filter: alpha(opacity=75);
+	width:100%;
+	height: auto;
+	position: absolute;
+	z-index:-1;
+	
+}
+#login .login-contain{
+	position: absolute;
+	width: fit-content;
+	border: 1px solid #000;
+	padding: 30px;
+	margin: 50px auto;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	text-align: center;
+	background-color: rgb(255,255,255,0.9);
+}
+#login .login-contain form{
+	text-align: left;
+	margin:20px auto;
+	padding: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+#login .login-contain form input{
+	margin-bottom: 20px;
+	width: 100%;
+}
+#login .login-contain form a{
+	font-size: 14px;
+}
+#login .button-holder{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#login button{
+	font-family: 'Pacifico', cursive;
+	font-size: 20px;
+}
+#login footer{
+	width: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 550px;
 }
