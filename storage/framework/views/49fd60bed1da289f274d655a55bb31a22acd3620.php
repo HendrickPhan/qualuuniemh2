@@ -85,7 +85,7 @@
 		<div class="section3">
 			<a href="">
 			<h1>Tặng quà</h1>
-			</>
+			<a/>
 		</div>
 	</div>
 <?php echo $__env->make('footer', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

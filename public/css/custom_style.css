@@ -46,7 +46,9 @@ header .nav-menu li a{
 }
 footer{
 	margin-top: 20px;
-	
+}
+footer a{
+	color: #fff;
 }
 footer .cover {
 	background-color: #3C3D41;
@@ -145,10 +147,10 @@ text-align: center;
 	font-size: 80px;
 }
 
-#login{
+#login, #register{
 	position: relative;
 }
-#login .background{
+#login .background, #register .background{
 	opacity: 0.75;
 	filter: alpha(opacity=75);
 	width:100%;
@@ -157,7 +159,13 @@ text-align: center;
 	z-index:-1;
 	
 }
-#login .login-contain{
+#register .background{
+	width: 100%;
+	height: 950px !important;
+	background: url("/upload/travel-souvenirs-4418221737.jpg") no-repeat center; 
+	background-size: cover;
+}
+#login .login-contain, #register .login-contain{
 	position: absolute;
 	width: fit-content;
 	border: 1px solid #000;
@@ -177,17 +185,19 @@ text-align: center;
 	margin-bottom: 0px;
 }
 #login .login-contain form input{
+	padding-left: 5px;
 	margin-bottom: 20px;
 	width: 100%;
 }
-#login .login-contain form a{
+
+#login .login-contain form a, #register .login-contain form a{
 	font-size: 14px;
 }
-#login .button-holder{
+#login .button-holder, #register .button-holder{
 	text-align: center;
 	margin-bottom: 20px;
 }
-#login button{
+#login button, #register button{
 	font-family: 'Pacifico', cursive;
 	font-size: 20px;
 }
@@ -196,4 +206,32 @@ text-align: center;
 	z-index: 1;
 	position: absolute;
 	top: 550px;
+}
+#login .logo, #register .logo{
+	left: 30px;
+	top: 30px;
+	position: absolute;
+	
+}
+
+#register footer{
+	width: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 900px;
+}
+#register .login-contain form{
+	text-align: left;
+	margin:20px auto;
+	padding: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+#register .login-contain form input, #register .login-contain form select, #register .login-contain form label{
+	margin-bottom: 20px;
+	padding-left: 5px;
+}
+#register .login-contain form label{
+	font-family: 'Pacifico', cursive;
+font-size: 1.5rem;
 }

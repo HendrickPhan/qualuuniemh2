@@ -24,18 +24,30 @@
 			<img class="background" src="/upload/travel-souvenirs-4418221737.jpg"/>
 			<a href="{{ url('/') }}"><img class="logo" src="upload/logo.png" width="50" height="50"/></a>
 			<div class="login-contain">
-				<h1>ĐĂNG NHẬP</h1>
-				<form action="" id="login-form">
-						<h4>Tên tài khoản:</h4>
-						<input type= "text" id="iduser" placeholder="Tên đăng nhập"/></br>
-						<h4>Mật khẩu:</h4>
-						<input type= "password" id="password" /></br>
-						<div class="button-holder">
-							<button class="btn btn-info" type="button" id="loginbutton">Đăng nhập</button>
+				<h1>QUÊN MẬT KHẨU</h1>
+				<form action="" id="foget-password-form">
+				<!--
+					chỗ này dùng ajax gửi email đi để xử lý,
+					hide enter_email_holder và show verify_holder
+				-->
+						<div id="enter_email_holder">
+							<h4>Email của bạn: </h4>
+							<input type= "email" id="email" placeholder="mail@mail.com"/></br>
+							<div class="button-holder">
+								<button class="btn btn-info" type="button">Lấy Mã Xác nhận</button>
+							</div>
 						</div>
+						<div id="verify_holder" style="display: none">
+							<h4>Mã xác nhận: </h4>
+								<input type="text" id="verify_key"/></br>
+							<div class="button-holder">
+								<button class="btn btn-info" type="button">Xác nhận</button>
+							</div>
+						</div>
+						
+						<a href="{{url('login')}}">Đăng nhập</a></br>
 						<a href="{{url('register')}}">Bạn chưa có tài khoản? </a></br>
-						<a href="{{url('forget_password')}}">Quên mật khẩu? </a>
-						<input type="hidden" name="action" value="login"/>
+						<input type="hidden" name="action" value="forget_password">
 				</form>
 			</div>
 
