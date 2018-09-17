@@ -23,3 +23,7 @@ Route::get('/register', function () {
 Route::get('/forget_password', function () {
     return view('forget_password');
 });
+
+// routes xử lý login
+Route::get('login','LoginController@getLogin');
+Route::post('login','LoginController@postLogin');

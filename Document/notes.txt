@@ -86,7 +86,7 @@ setting file .env
  username: admin
  password: 123456
  email: admin@admin.com
-mấy field còn lại tùy
+mấy field còn lại tùy (done)
  task 3: viết doc giải thích phần migration, seed và routes. Lưu lại file tên là  Giải thích.doc
  task 4: Tìm hiểu về mô hình MVC là gì, MVC trong laravel như thế nào update vào Giải thích.doc. 
  task 5: Tạo model, controller, service cho user và product. Liệt kê đối tượng mà mình cần tạo thêm.
