@@ -13,7 +13,7 @@ class CreateMathangTable extends Migration
      */
     public function up()
     {
-        Schema::table('mathang', function (Blueprint $table) {
+        Schema::create('mathang', function (Blueprint $table) {
             $table->increments('id');
 			$table->string('TenMatHang',50);
 			$table->string('MoTa',1000);

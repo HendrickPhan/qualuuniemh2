@@ -15,7 +15,7 @@ class CreateLoaimathangTable extends Migration
     {
         Schema::create('loaimathang', function (Blueprint $table) {
             $table->increments('id');
-            $talbe->string('TenLoaiMatHang',50);
+            $table->string('TenLoaiMatHang',50);
         });
     }
 
