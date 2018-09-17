@@ -27,3 +27,6 @@ Route::get('/forget_password', function () {
 // routes xử lý login
 Route::get('login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
+
+//xử lý logout
+Route::get('/logout','LoginController@logout');

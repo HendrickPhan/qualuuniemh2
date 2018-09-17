@@ -14,6 +14,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\LoginController' => $baseDir . '/app/Http/Controllers/LoginController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -3344,7 +3345,6 @@ return array(
     'Whoops\\Util\\SystemFacade' => $vendorDir . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
     'Whoops\\Util\\TemplateHelper' => $vendorDir . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
     'XdgBaseDir\\Xdg' => $vendorDir . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
-    'nguoidungtableseeder' => $baseDir . '/database/seeds/nguoidungtableseeder.php',
     'phpDocumentor\\Reflection\\DocBlock' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
     'phpDocumentor\\Reflection\\DocBlockFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
     'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
@@ -3413,4 +3413,5 @@ return array(
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+    'userstableseeder' => $baseDir . '/database/seeds/nguoidungtableseeder.php',
 );
