@@ -67,7 +67,7 @@ setting file .env
 	Kể ra các thuộc tính mà  1 người dùng có thể có. VD: Tên đăng nhập, ....
 	Kể ra các thuộc tính cho từng đối tượng ở task2.
 	thống kê lại thành 1 file document để vào folder document
- task 4 (done):
+ task 4:(done, đã viết doc được lưu ở Document: Migration.doc
 	Update: Từ document 2 file Document/DB_1.JPG,DB_2.JPG  nghiên cứu tìm hiểu về migration để tạo db cho trang web.
 	Gợi ý các bước:
 	Vào mySql tạo 1 database mới có tên là qualuuniemh2_db.
