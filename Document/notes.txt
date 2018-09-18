@@ -67,7 +67,7 @@ setting file .env
 	Kể ra các thuộc tính mà  1 người dùng có thể có. VD: Tên đăng nhập, ....
 	Kể ra các thuộc tính cho từng đối tượng ở task2.
 	thống kê lại thành 1 file document để vào folder document
- task 4:
+ task 4 (done):
 	Update: Từ document 2 file Document/DB_1.JPG,DB_2.JPG  nghiên cứu tìm hiểu về migration để tạo db cho trang web.
 	Gợi ý các bước:
 	Vào mySql tạo 1 database mới có tên là qualuuniemh2_db.
@@ -79,28 +79,28 @@ setting file .env
 	Từ file migration: chạy lệnh php artisan migrate để tạo db
 		https://www.youtube.com/watch?v=iCpIsDDIKzQ	video hướng dẫn chạy migrate để tạo db
 	
-16/9 
+17/9 
 
- task 1: hoàn thành task 4 (15/9)
- task 2: tạo seed data cho table user:
+ task 1 (done): hoàn thành task 4 (15/9) 
+ task 2 (done): tạo seed data cho table user:
  username: admin
  password: 123456
  email: admin@admin.com
-mấy field còn lại tùy (done)
+mấy field còn lại tùy 
  task 3: viết doc giải thích phần migration, seed và routes. Lưu lại file tên là  Giải thích.doc
  task 4: Tìm hiểu về mô hình MVC là gì, MVC trong laravel như thế nào update vào Giải thích.doc. 
- task 5: Tạo model, controller, service cho user và product. Liệt kê đối tượng mà mình cần tạo thêm.
- task 6: Làm chức năng register + login.
+ task 5: Tạo model, controller, service cho product. Liệt kê đối tượng mà mình cần tạo thêm.
+ task 6 (done): Làm chức năng register + login.
  task 7: Làm chức năng gửi mail verify khi tạo account trong mail chứa link, khi vào link thì set active = 1, lúc mới tạo thì set = 0.
-17/9
- task 1: làm layout cho trang loại mặt hàng.
+18/9
+Hoàn thành các task của 17/9
+ 19/9
+  task 1: làm layout cho trang loại mặt hàng.
  task 2: làm layout cho trang 1 mặt hàng.
  task 3: làm layout cho trang cart.
  task 4: Check lại tất cả các màn hình mà mình đã làm xem có bug chỗ nào không, sửa lại nội dung ở cái nav sao cho hợp lý.
  Cái nav cũng đang có bug: dùng margin và width không đúng cách nên khiến cái nav nó bị lồi ra bên trái. Sửa lại chỗ này dùng row với col đừng dùng
  li với magin như thế.
  update lại file doc chú thích các màn hình nào đã hoàn thành.
- 
- 
  
  
