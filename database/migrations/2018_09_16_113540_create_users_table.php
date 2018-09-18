@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
 			$table->integer('Role'); //1 admin 2 user
 			$table->integer('Active'); //1 đã active 0 chưa active
 			$table->rememberToken();
+			$table->timestamps();
         });
     }
 

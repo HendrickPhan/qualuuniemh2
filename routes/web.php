@@ -17,9 +17,7 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/register', function () {
-    return view('register');
-});
+
 Route::get('/forget_password', function () {
     return view('forget_password');
 });
@@ -30,3 +28,7 @@ Route::post('login','LoginController@postLogin');
 
 //xử lý logout
 Route::get('/logout','LoginController@logout');
+
+// Xử lý register
+Route::get('/register', 'RegisterController@create');
+Route::post('register', 'RegisterController@store');
