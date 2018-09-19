@@ -50,12 +50,23 @@
 			</div>
 		</div>
 		<nav class="row nav-menu">
-			<li><a  href=""><b>Dây chuyền</b></a></li>
-			<li><a  href=""><b>Nhẫn</b></a></li>
-			<li><a  href=""><b>Quần áo</b></a></li>
-			<li><a  href=""><b>Đồng hồ</b></a></li>
-			<li><a  href=""><b>Vòng tay</b></a></li>
-			<li><a  href=""><b>Gấu bông</b></a></li>
-			<li><a  href=""><b>Khăn choàng</b></a></li>
+			<div class="product-type col-sm-2">
+				<a href=""><b>Dây chuyền</b></a>
+			</div>
+			<div class="product-type col-sm-2">
+				<a  href=""><b>Nhẫn</b></a>
+			</div>
+			<div class="product-type col-sm-2">
+				<a  href=""><b>Quần áo</b></a>
+			</div>
+			<div class="product-type col-sm-2">
+				<a  href=""><b>Đồng hồ</b></a>
+			</div>
+			<div class="product-type col-sm-2">
+				<a  href=""><b>Vòng tay</b></a>
+			</div>
+			<div class="product-type col-sm-2">
+				<a  href=""><b>Gấu bông</b></a>
+			</div>
 		</nav>
 	</header>
