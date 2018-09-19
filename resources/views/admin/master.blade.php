@@ -21,6 +21,32 @@
 		
     </head>
     <body>
+		<header>
+			<div class="header-menu">
+				<div class="container">
+					<div class="row">
+						<div class="nav-quanli col-md-2">
+							<a href=""><b>Người dùng</b></a>
+						</div>
+						<div class="nav-quanli col-md-2">
+							<a href=""><b>Mặt hàng</b></a>
+						</div>
+						<div class="nav-quanli col-md-2">
+							<a href=""><b>Loại mặt hàng</b></a>
+						</div>
+						<div class="nav-quanli col-md-2">
+							<a href=""><b>Đơn hàng</b></a>
+						</div>
+						<div class="nav-quanli col-md-2">
+							<a href=""><b>Phí dịch vụ</b></a>
+						</div>
+						<div class="nav-quanli col-md-2">							
+								<li><img src="/upload/sign_out.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>			
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 	@section('content')
 	@show
 		<footer>
@@ -58,8 +84,8 @@
 						<div class="col-sm-3">
 							<h3>Follow Us</h3>
 							</br>
-							<a href="https://www.facebook.com/phandinhminh.hieu" target="_blank"><img src="upload/facebook.png"/></a>
-							<a href="https://plus.google.com/110251690083587542042" target="_blank"><img src="upload/google.png"/></a>
+							<a href="https://www.facebook.com/phandinhminh.hieu" target="_blank"><img src="/upload/facebook.png"/></a>
+							<a href="https://plus.google.com/110251690083587542042" target="_blank"><img src="/upload/google.png"/></a>
 						</div>
 					</div>
 				</div>
