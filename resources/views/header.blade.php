@@ -19,33 +19,40 @@
 		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 		<script src="{{ asset('js/custom_js.js') }}"></script>
 		
+		<!-- Owlcarousel2 -->
+		<link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+		<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+		
     </head>
     <body>
 	<header>
-		<div class="container">
-			<div class="row header-menu">
-				<div class="col-md-2">
-					<a href="{{url('/')}}"><img src="upload/logo.png" width="50" height="50"></a>
-				</div>
-				<div class="col-md-5" id="search-menu">
-					<input type="text" placeholder=" Tìm sản phẩm" id="searchproduct"/>
-					<button class="btn" type="button" id="searchbutton"><b>Tìm</b></button>
-				</div>
-				<div class="col-md-5" id="info-menu">
-					
-					<li><img src="upload/phone.png" width="25" height="25"/>0964.030.602</li>
-					
-					@if($user = Auth::user())
-						<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>
-						@if($user->Role==1)
-							<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('logout')}}"> Admin page</a></li>
+		<div class="header-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2">
+						<a href="{{url('/')}}"><img src="upload/logo.png" width="50" height="50"></a>
+					</div>
+					<div class="col-md-5" id="search-menu">
+						<input type="text" placeholder=" Tìm sản phẩm" id="searchproduct"/>
+						<button class="btn" type="button" id="searchbutton"><b>Tìm</b></button>
+					</div>
+					<div class="col-md-5" id="info-menu">
+						
+						<li><img src="upload/phone.png" width="25" height="25"/>0964.030.602</li>
+						
+						@if($user = Auth::user())
+							<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>
+							@if($user->Role==1)
+								<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('logout')}}"> Admin page</a></li>
+							@else
+								<li><img src="upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
+							@endif
 						@else
-							<li><img src="upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
+						<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('login')}}"> Đăng nhập</a></li>
+						<li><img src="upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
 						@endif
-					@else
-					<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('login')}}"> Đăng nhập</a></li>
-					<li><img src="upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
-					@endif
+					</div>
 				</div>
 			</div>
 		</div>

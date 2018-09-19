@@ -3,10 +3,23 @@
 	<div id="mathang_contain" class="container">
 		<div class="section1 row">
 			<div class = "mathang_imgs col-md-6">
-				<div class="main_img">
-					<img src="/upload/$_20.JPG">
+				<div class="owl-carousel owl-theme">
+					<div class="main_img item">
+						<img src="/upload/$_20.JPG">
+					</div>
+					<div class="main_img item">
+						<img src="/upload/$_20.JPG">
+					</div>
+					<div class="main_img item">
+						<img src="/upload/$_20.JPG">
+					</div>
+					<div class="main_img item">
+						<img src="/upload/$_20.JPG">
+					</div>
+					<div class="main_img item">
+						<img src="/upload/$_20.JPG">
+					</div>
 				</div>
-			
 			</div>
 			<div class = "mathang_desc col-md-6">
 				<div class="title">

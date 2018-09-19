@@ -7,7 +7,7 @@ h1,h2,h3,h4,h5,h6{
 header .header-menu{
 	padding-top:15px;
 	padding-bottom:15px;
-	border-bottom:1px solid black;
+	border-bottom:1px solid #eee;
 }
 header .header-menu li{
 	display:inline;
@@ -33,6 +33,7 @@ header {
 	z-index:1;
 	width:100%;
 	background-color: #fff;
+	margin-bottom: 25px;
 }
 #searchproduct{
 	width:300px;
@@ -247,4 +248,31 @@ font-size: 1.5rem;
 	height: 450px;
 	object-fit: cover;
 	
+}
+
+#mathang_contain .section1 .mathang_imgs{
+	position: relative;
+	
+}
+#mathang_contain .section1  .owl-nav{
+	position: absolute;
+	top: 150px;
+	width: 100%;
+	font-size: 75px;
+}
+#mathang_contain .section1  .owl-prev{
+	float:left;
+	color: #ddd;
+}
+#mathang_contain .section1  .owl-prev:hover{
+	background-color: transparent;
+	color: #000;
+}
+#mathang_contain .section1  .owl-next{
+	float:right;
+	color: #ddd;
+}
+#mathang_contain .section1  .owl-next:hover{
+	background-color: transparent;
+	color: #000;
 }

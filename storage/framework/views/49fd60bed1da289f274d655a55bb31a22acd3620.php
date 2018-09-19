@@ -1,4 +1,4 @@
-<?php echo $__env->make('header', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php $__env->startSection('content'); ?>
 	<div id="hp">
 		<div class="hp_fullwidth_img">
 			<h2>H2 MANG CẢ THẾ GIỚI ĐẾN VỚI NHÀ CỦA BẠN</h2>
@@ -88,4 +88,6 @@
 			<a/>
 		</div>
 	</div>
-<?php echo $__env->make('footer', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
