@@ -35,3 +35,4 @@ Route::post('register', 'RegisterController@store');
 
 // Xử lý mặt hàng
 Route::get('/mathang', 'MatHangController@view_single_product');
+Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung');

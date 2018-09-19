@@ -249,7 +249,8 @@ font-size: 1.5rem;
 	object-fit: cover;
 	
 }
-
+header .header-menu .nav-quanli a{
+	color:black;
 #mathang_contain .section1 .mathang_imgs{
 	position: relative;
 	
