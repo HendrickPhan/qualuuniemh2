@@ -32,3 +32,6 @@ Route::get('/logout','LoginController@logout');
 // Xử lý register
 Route::get('/register', 'RegisterController@create');
 Route::post('register', 'RegisterController@store');
+
+// Xử lý mặt hàng
+Route::get('/mathang', 'MatHangController@view_single_product');

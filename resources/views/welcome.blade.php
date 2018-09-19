@@ -1,4 +1,5 @@
-@include('header')
+@extends('master')
+	@section('content')
 	<div id="hp">
 		<div class="hp_fullwidth_img">
 			<h2>H2 MANG CẢ THẾ GIỚI ĐẾN VỚI NHÀ CỦA BẠN</h2>
@@ -88,4 +89,4 @@
 			<a/>
 		</div>
 	</div>
-@include('footer')
+@endsection
