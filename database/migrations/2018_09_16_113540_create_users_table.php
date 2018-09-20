@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
 			$table->date('NgaySinh')->nullable();
 			$table->string('email');
 			$table->bigInteger('SoDienThoai')->nullable();
-			$table->integer('GioiTinh')->nullable(); //1 nam 2 nu 3 khac
+			$table->string('GioiTinh')->nullable(); //1 nam 2 nu 3 khac
 			$table->string('DiaChi')->nullable();
 			$table->string('ThanhPho')->nullable();
 			$table->string('Quan')->nullable();

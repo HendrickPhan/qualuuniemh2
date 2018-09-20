@@ -72,9 +72,9 @@
 							<tr>
 								<td><label for="GioiTinh">Giới tính:</label></td>
 								<td><select  id="GioiTinh" name="GioiTinh" value="{{old('GioiTinh')}}">
-									<option value="1">Nam</option>
-									<option value="2">Nữ</option>
-									<option value="3">Khác</option>
+									<option value="Nam">Nam</option>
+									<option value="Nữ">Nữ</option>
+									<option value="Khác">Khác</option>
 								</select></td>
 							</tr>
 							@if($errors->has('GioiTinh'))

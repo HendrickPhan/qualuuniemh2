@@ -30,9 +30,9 @@
 						<td>{{$user->SoDienThoai}}</td>
 						<td>
 						
-						<a href="" class="btn" data-id="{{$user->id}}">Xem</button>
-						<a href="" class="btn" data-id="{{$user->id}}">Sửa</button>
-						<a href="" class="btn" data-id="{{$user->id}}">Xóa</button>
+						<a href='{{url("/admin/XemNguoiDung/$user->id")}}' class="btn btn-info">Xem</a>
+						<a href="" class="btn btn-danger" data-id="{{$user->id}}">Sửa</a>
+						<a href="" class="btn btn-secondary" data-id="{{$user->id}}">Xóa</a>
 						</td>
 					</tr>
 					@endforeach
