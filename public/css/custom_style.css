@@ -336,3 +336,29 @@ header .header-menu .nav-quanli a{
 }
 
 
+#mathang_contain .section2 .danhgia .comment {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+#mathang_contain .section2 .danhgia .comment .comment-content{
+	color: #666;
+	padding-left:50px;
+}
+#mathang_contain .section2 .danhgia .comment .user-avatar{
+	width:50px;
+	height:50px;
+	object-fit:cover;
+}
+#mathang_contain .section2 .cauhoi .ask-field{
+	width:500px;
+	height:50px;
+}
+
+#mathang_contain .section2 .cauhoi .btn-ask{
+	margin-top:10px;
+}
+
+#mathang_contain .section2 .cauhoi .ask-header{
+	margin-top:10px;
+}
