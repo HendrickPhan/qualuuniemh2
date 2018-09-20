@@ -42,9 +42,9 @@
 						<li><img src="upload/phone.png" width="25" height="25"/>0964.030.602</li>
 						
 						@if($user = Auth::user())
-							<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>
+							<li><img src="upload/sign_out.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>
 							@if($user->Role==1)
-								<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('logout')}}"> Admin page</a></li>
+								<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('admin')}}"> Admin page</a></li>
 							@else
 								<li><img src="upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
 							@endif

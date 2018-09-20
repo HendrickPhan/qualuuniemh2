@@ -1,13 +1,17 @@
 @extends('admin/master')
 @section('content')
+
+
+<div class="container">
 	<div>
 		<h1> Quản lý người dùng</h1>
 		
+		<hr>
 	</div>
 	<div class="quanly" >
-		<button class="btn addbutton">Thêm người dùng</button>
+		<button class="btn btn-success addbutton">Thêm người dùng</button>
 		<div class="user-info">
-			<table id="table_id">
+			<table id="table_id" >
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -18,22 +22,23 @@
 					</tr>
 				</thead>
 				<tbody>
+					@foreach ($users as $user)
 					<tr>
-						<td>Row 1 Data 1</td>
-						<td>Row 1 Data 2</td>
-						<td>Row 1 Data 1</td>
-						<td>Row 1 Data 2</td>
-						<td>Row 1 Data 2</td>
+						<td>{{$user->id}}</td>
+						<td>{{$user->username}}</td>
+						<td>{{$user->email}}</td>
+						<td>{{$user->SoDienThoai}}</td>
+						<td>
+						
+						<a href="" class="btn" data-id="{{$user->id}}">Xem</button>
+						<a href="" class="btn" data-id="{{$user->id}}">Sửa</button>
+						<a href="" class="btn" data-id="{{$user->id}}">Xóa</button>
+						</td>
 					</tr>
-					<tr>
-						<td>Row 1 Data 1</td>
-						<td>Row 1 Data 2</td>
-						<td>Row 1 Data 1</td>
-						<td>Row 1 Data 2</td>
-						<td>Row 1 Data 2</td>
-					</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</div>
 	</div>
+</div>
 @endsection

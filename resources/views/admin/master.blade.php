@@ -33,7 +33,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="nav-quanli col-md-2">
-							<a href=""><b>Người dùng</b></a>
+							<a href="{{url('/admin/quanlynguoidung')}}"><b>Người dùng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
 							<a href=""><b>Mặt hàng</b></a>
@@ -48,7 +48,7 @@
 							<a href=""><b>Phí dịch vụ</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">							
-								<li><img src="/upload/sign_out.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>			
+								<li><img src="/upload/sign_out.png" width="25" height="25"/><a href="{{url('/')}}">Trang chủ</a></li>			
 						</div>
 					</div>
 				</div>

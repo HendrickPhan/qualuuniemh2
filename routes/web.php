@@ -14,16 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', function () {
-    return view('login');
-});
 
 Route::get('/forget_password', function () {
     return view('forget_password');
 });
 
 // routes xử lý login
-Route::get('login','LoginController@getLogin');
+Route::get('/login','LoginController@getLogin');
 Route::post('login','LoginController@postLogin');
 
 //xử lý logout
@@ -35,4 +32,8 @@ Route::post('register', 'RegisterController@store');
 
 // Xử lý mặt hàng
 Route::get('/mathang', 'MatHangController@view_single_product');
-Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung');
+Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung')
+	->middleware('is_admin');
+	
+Route::get('/admin', 'adminpageController@Dashboard')
+->middleware('is_admin');
