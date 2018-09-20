@@ -18,6 +18,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 		<script src="{{ asset('js/custom_js.js') }}"></script>
+		<!-- Owlcarousel2 -->
+		<link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+		<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+		
+		<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 		
     </head>
     <body>
