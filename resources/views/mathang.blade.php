@@ -25,8 +25,13 @@
 				<div class="title">
 					<h1>Tên Mặt Hàng 1<h1>
 				</div>
+				<div class="xuatxu">
+					<label>Xuất xứ:</label> <span>Việt Nam</span>
+				</div>
 				<div class="description">
-					<p>&nbsp &nbsp &nbsp
+				
+					<p>
+					<label>Mô tả:</label> 
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 					Ut ac rutrum libero. Morbi et auctor ante. Nunc vitae nisl sed 
 					justo semper auctor sed in lectus. Cras vulputate lorem eu urna 
@@ -37,6 +42,35 @@
 					non aliquam purus dolor non urna. Etiam id viverra massa. 
 					Nullam maximus sapien mauris, eget scelerisque justo condimentum sit amet. 
 					Suspendisse nec consectetur est, sed sagittis justo.</p>
+				</div>
+				<div class="price">
+					<h2>20 000 vnđ</h2>
+				</div>
+				<div class="add_to_card form-group">
+					<label class="">Số lượng:</label> 
+					<input class="soluong form-control" type="number" name="soluong"/>
+					<button class="btn addToCartBtn" id="addToCart">Thêm vào giỏ</button>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="section2">
+			<div class="container">
+				<div class="danhgia">
+					<h3>Đánh giá</h3>
+					
+					<div>
+						
+					</div>
+					
+				</div>
+					
+				<div class="cauhoi">
+					<h3>Câu hỏi</h3>
+					<div>
+						
+					</div>
 				</div>
 			</div>
 		</div>
