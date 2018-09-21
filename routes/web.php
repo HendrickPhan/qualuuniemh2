@@ -34,6 +34,8 @@ Route::post('register', 'RegisterController@store');
 Route::get('/mathang', 'MatHangController@view_single_product');
 Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung')
 	->middleware('is_admin');
+Route::get('/admin/quanlymathang', 'adminpageController@QuanLyMatHang')
+	->middleware('is_admin');
 	
 Route::get('/admin', 'adminpageController@Dashboard')
 ->middleware('is_admin');
