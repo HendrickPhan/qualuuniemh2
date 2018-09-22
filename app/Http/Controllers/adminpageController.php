@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\model\product;
 class adminpageController extends Controller
 {
 	public function Dashboard(){
@@ -31,5 +32,15 @@ class adminpageController extends Controller
 		
 		return view('admin/nguoidung',['user' => $user, 'action'=>'view']);
 	}
+
+	public function QuanLyMatHang(){
+		$products = Product::table('product')->select('TenMatHang','Gia','XuatXu','SoLuongTon')->get();
+		return view('admin/quanlymathang',['product' => $product]);
+	}
+	public function XemMatHang($id){
+		$products = Product::where('id','=',$id)->first();
+		return view('admin/mathang',['product' => $product, 'action'=>'view']);
+	}
+	
 	
 }

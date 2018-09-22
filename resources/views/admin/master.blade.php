@@ -36,7 +36,7 @@
 							<a href="{{url('/admin/quanlynguoidung')}}"><b>Người dùng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
-							<a href=""><b>Mặt hàng</b></a>
+							<a href="{{url('/admin/quanlymathang')}}"><b>Mặt hàng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
 							<a href=""><b>Loại mặt hàng</b></a>
