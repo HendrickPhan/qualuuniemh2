@@ -31,8 +31,8 @@
 						<td>
 						
 						<a href='{{url("/admin/XemNguoiDung/$user->id")}}' class="btn btn-info">Xem</a>
-						<a href="" class="btn btn-danger" data-id="{{$user->id}}">Sửa</a>
-						<a href="" class="btn btn-secondary" data-id="{{$user->id}}">Xóa</a>
+						<a href='{{url("/admin/SuaNguoiDung/$user->id")}}' class="btn btn-danger">Sửa</a>
+						<a href='{{url("/admin/XemNguoiDung/$user->id")}}' class="btn btn-secondary">Xóa</a>
 						</td>
 					</tr>
 					@endforeach

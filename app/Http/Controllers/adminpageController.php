@@ -19,5 +19,17 @@ class adminpageController extends Controller
 		$user = User::where('id','=',$id)->first();
 		return view('admin/nguoidung',['user' => $user, 'action'=>'view']);
 	}
+	public function SuaNguoiDung($id){
+		$user = User::where('id','=',$id)->first();
+		return view('admin/nguoidung',['user' => $user, 'action'=>'edit']);
+	}
+	public function SuaThongTinNguoiDung($id){
+		$user = User::where('id','=',$id)->first();
+		
+		
+		
+		
+		return view('admin/nguoidung',['user' => $user, 'action'=>'view']);
+	}
 	
 }

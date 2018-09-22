@@ -41,3 +41,8 @@ Route::get('/admin', 'adminpageController@Dashboard')
 // Xử lý các thao tác với người dùng
 Route::get('/admin/XemNguoiDung/{id}','adminpageController@XemNguoiDung')
 ->middleware('is_admin');
+
+Route::get('/admin/SuaNguoiDung/{id}','adminpageController@SuaNguoiDung')
+->middleware('is_admin');
+Route::post('/admin/SuaNguoiDung/{id}','adminpageController@SuaThongTinNguoiDung')
+->middleware('is_admin');
