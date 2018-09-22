@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class MatHang extends Model
 {
     //
 	 protected $fillable = [

@@ -30,21 +30,28 @@ Route::get('/logout','LoginController@logout');
 Route::get('/register', 'RegisterController@create');
 Route::post('register', 'RegisterController@store');
 
-// Xử lý mặt hàng
-Route::get('/mathang', 'MatHangController@view_single_product');
+
+
+	
+Route::get('/admin', 'adminpageController@Dashboard')
+	->middleware('is_admin');
+// Xử lý các thao tác với người dùng
 Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung')
+	->middleware('is_admin');
+Route::get('/admin/XemNguoiDung/{id}','adminpageController@XemNguoiDung')
+	->middleware('is_admin');
+
+Route::get('/admin/SuaNguoiDung/{id}','adminpageController@SuaNguoiDung')
+	->middleware('is_admin');
+Route::post('/admin/SuaNguoiDung/{id}','adminpageController@SuaThongTinNguoiDung')
+	->middleware('is_admin');
+
+
+// Xử lý mặt hàng
+Route::get('/admin/XemMatHang/', 'MatHangController@view_single_product');
+Route::get('/admin/XemMatHang/{id}','adminpageController@XemNguoiDung')
 	->middleware('is_admin');
 Route::get('/admin/quanlymathang', 'adminpageController@QuanLyMatHang')
 	->middleware('is_admin');
-	
-Route::get('/admin', 'adminpageController@Dashboard')
-->middleware('is_admin');
 
-// Xử lý các thao tác với người dùng
-Route::get('/admin/XemNguoiDung/{id}','adminpageController@XemNguoiDung')
-->middleware('is_admin');
 
-Route::get('/admin/SuaNguoiDung/{id}','adminpageController@SuaNguoiDung')
-->middleware('is_admin');
-Route::post('/admin/SuaNguoiDung/{id}','adminpageController@SuaThongTinNguoiDung')
-->middleware('is_admin');

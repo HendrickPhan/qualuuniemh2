@@ -22,18 +22,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($product as $product)
+					@foreach ($MatHangs as $MatHang)
 					<tr>
-						<td>{{$product->id}}</td>
-						<td>{{$product->TenMatHang}}</td>
-						<td>{{$product->XuatXu}}</td>
-						<td>{{$product->SoLuongTon}}</td>
-						<td>{{$product->idLoaiMatHang}}</td>
+						<td>{{$MatHang->id}}</td>
+						<td>{{$MatHang->TenMatHang}}</td>
+						<td>{{$MatHang->XuatXu}}</td>
+						<td>{{$MatHang->SoLuongTon}}</td>
+						<td>{{$MatHang->idLoaiMatHang}}</td>
 						<td>
 						
-						<a href='{{url("/admin/XemNguoiDung/$user->id")}}' class="btn btn-info">Xem</a>
-						<a href="" class="btn btn-danger" data-id="{{$user->id}}">Sửa</a>
-						<a href="" class="btn btn-secondary" data-id="{{$user->id}}">Xóa</a>
+						<a href='{{url("/admin/XemMatHang/$MatHang->id")}}' class="btn btn-info">Xem</a>
+						<a href="" class="btn btn-danger" data-id="{{$MatHang->id}}">Sửa</a>
+						<a href="" class="btn btn-secondary" data-id="{{$MatHang->id}}">Xóa</a>
 						</td>
 					</tr>
 					@endforeach

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\model\product;
+use App\Model\MatHang;
+
+
 class adminpageController extends Controller
 {
 	public function Dashboard(){
@@ -34,11 +36,11 @@ class adminpageController extends Controller
 	}
 
 	public function QuanLyMatHang(){
-		$products = Product::table('product')->select('TenMatHang','Gia','XuatXu','SoLuongTon')->get();
-		return view('admin/quanlymathang',['product' => $product]);
+		$MatHangs = MatHang::all();
+		return view('admin/quanlymathang',['MatHangs' => $MatHangs, 'action'=>'view']);
 	}
 	public function XemMatHang($id){
-		$products = Product::where('id','=',$id)->first();
+		$MatHang = MatHang::where('id','=',$id)->first();
 		return view('admin/mathang',['product' => $product, 'action'=>'view']);
 	}
 	
