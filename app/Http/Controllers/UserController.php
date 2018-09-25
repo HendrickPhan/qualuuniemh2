@@ -10,41 +10,22 @@ use App\User;
 
 class UserController extends Controller
 {
-    //
-	public static function create(Request $request){
-		$rules = [
-    		'username' =>'required|min:4|unique:users,username',
-    		'password' => 'required|min:4|confirmed',
-			'email' => 'required|e-mail|unique:users,email',
-			'HoVaTen' => 'required',
-			'NgaySinh' => 'date|required',
-			'SoDienThoai' => 'numeric|required', 
-			'GioiTinh' => 'required',
-			'DiaChi' => 'required',
-			'ThanhPho' => 'required',
-			'Quan' => 'required',
-    	];
-    	$messages = [
-    		'username.required' => 'Tên đăng nhập là trường bắt buộc',
-    		'username.min' => 'Tên đăng nhập phải chứa ít nhất 4 ký tự',
-			'username.unique' =>'Tên đăng nhập đã được đăng ký',
-    		'password.required' => 'Mật khẩu là trường bắt buộc',
-    		'password.min' => 'Mật khẩu phải chứa ít nhất 4 ký tự',
-    		'password.confirmed' => 'Mật khẩu không khớp',
-			'email.e-mail' => 'Email không hợp lệ',
-			'email.required' => 'Email là trường bắt buộc',
-			'email.unique' => 'Email đã được đăng ký',
-			'HoVaTen.required' => 'HoVaTen là trường bắt buộc', 
-			'NgaySinh.required' => 'NgaySinh là trường bắt buộc', 
-			'NgaySinh.date' => 'NgaySinh là không hợp lệ', 
-			'SoDienThoai.required' => 'SoDienThoai là trường bắt buộc', 
-			'SoDienThoai.numberic' => 'SoDienThoai không hợp lệ', 
-			'GioiTinh.required' => 'GioiTinh là trường bắt buộc', 
-			'DiaChi.required' => 'DiaChi là trường bắt buộc', 
-			'ThanhPho.required' => 'ThanhPho là trường bắt buộc',
-			'Quan.required' => 'Quan là trường bắt buộc',
-    	];
-		$validator = Validator::make($request->all(), $rules, $messages);
+	
+	public function index_admin()
+    {
+        // for admin page
+		$users = User::where('role','=','2')->get();
+		return view('admin/user/index',['users' => $users]);
+    }
+	public function create_admin()
+    {
+     	 //
+		 return view('admin/user/create');
+    }
+	public function store_admin(Request $request)
+    {
+        $user = new User;
+		$validator = Validator::make($request->all(), $user->rules, $user->messages);
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
@@ -64,43 +45,86 @@ class UserController extends Controller
 				'Role',
 				'Active'
 			]));
-			return $user;
+			return redirect('/admin/nguoidung');
 		}
-		
-	}
-	public static function update(Request $request, $id){
-		$rules = [
-			'email' => 'required|e-mail|unique:users,email',
-			'HoVaTen' => 'required',
-			'NgaySinh' => 'date|required',
-			'SoDienThoai' => 'numeric|required', 
-			'GioiTinh' => 'required',
-			'DiaChi' => 'required',
-			'ThanhPho' => 'required',
-			'Quan' => 'required',
-    	];
-    	$messages = [
-			'email.e-mail' => 'Email không hợp lệ',
-			'email.required' => 'Email là trường bắt buộc',
-			'email.unique' => 'Email đã được đăng ký',
-			'HoVaTen.required' => 'HoVaTen là trường bắt buộc', 
-			'NgaySinh.required' => 'NgaySinh là trường bắt buộc', 
-			'NgaySinh.date' => 'NgaySinh là không hợp lệ', 
-			'SoDienThoai.required' => 'SoDienThoai là trường bắt buộc', 
-			'SoDienThoai.numberic' => 'SoDienThoai không hợp lệ', 
-			'GioiTinh.required' => 'GioiTinh là trường bắt buộc', 
-			'DiaChi.required' => 'DiaChi là trường bắt buộc', 
-			'ThanhPho.required' => 'ThanhPho là trường bắt buộc',
-			'Quan.required' => 'Quan là trường bắt buộc',
-    	];
-		$validator = Validator::make($request->all(), $rules, $messages);
+    }
+	public function show_admin($id)
+    {
+        //
+		$user = User::where('id','=',$id)->first();
+		return view('admin/user/show',['user' => $user]);
+    }
+	public function edit_admin($id)
+    {
+        //
+		$user = User::where('id','=',$id)->first();
+		return view('admin/user/edit',['user' => $user]);
+    }
+	
+	
+	
+	public function create()
+    {
+        //
+		return view('user/create');
+    }
+	public function store(Request $request)
+    {
+        //
+		$user = new User;
+		$validator = Validator::make($request->all(), $user->rules, $user->messages);
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
+			$request['Role']=2;
+			$request['Active']=0;
+			$user = User::create(request([
+				'username',
+				'email', 
+				'password',
+				'HoVaTen', 
+				'NgaySinh', 
+				'SoDienThoai', 
+				'GioiTinh', 
+				'DiaChi', 
+				'ThanhPho',
+				'Quan',
+				'Role',
+				'Active'
+			]));
 			
-			$user->username = $request['username'];
-			$user->email = $request['email'];
-			$user->password = $request['password'];
+			auth()->login($user);
+			return redirect('/');
+		}
+    }
+	public function show($id)
+    {
+        //
+
+    }
+	public function edit($id)
+    {
+        //
+    }
+	public function update(Request $request, $id)
+    {
+        //
+		$user = User::where('id','=',$id)->first();
+		$email = $request['email'];
+		if($user->email == $request['email']){
+			unset($request['email']);	
+		}
+
+		$user->rules['email'] = 'e-mail|unique:users,email';
+		unset($user->rules['username']);
+		unset($user->rules['password']);
+		
+		
+		$validator = Validator::make($request->all(), $user->rules, $user->messages);
+		if ($validator->fails()) {
+    		return redirect()->back()->withErrors($validator)->withInput();
+    	} else {
+			$user->email = $email;
 			$user->HoVaTen = $request['HoVaTen'];
 			$user->NgaySinh = $request['NgaySinh'];
 			$user->SoDienThoai = $request['SoDienThoai'];
@@ -108,13 +132,17 @@ class UserController extends Controller
 			$user->DiaChi = $request['DiaChi'];
 			$user->ThanhPho = $request['ThanhPho'];
 			$user->Quan = $request['Quan'];
+
+
 			$user->save();
-			return $user;
+			return redirect()->back();
 		}
-		
-	}
-	public function delete(Request $request){
-	
-	
-	}
+    }
+	public function destroy($id)
+    {
+        //
+		$user = User::where('id','=',$id)->first();
+		$user->delete();
+		return redirect()->back();
+    }
 }

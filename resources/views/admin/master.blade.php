@@ -33,10 +33,10 @@
 				<div class="container">
 					<div class="row">
 						<div class="nav-quanli col-md-2">
-							<a href="{{url('/admin/quanlynguoidung')}}"><b>Người dùng</b></a>
+							<a href="{{url('/admin/nguoidung')}}"><b>Người dùng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
-							<a href="{{url('/admin/quanlymathang')}}"><b>Mặt hàng</b></a>
+							<a href="{{url('/admin/mathang')}}"><b>Mặt hàng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
 							<a href=""><b>Loại mặt hàng</b></a>

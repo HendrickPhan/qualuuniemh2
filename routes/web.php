@@ -27,29 +27,25 @@ Route::post('login','LoginController@postLogin');
 Route::get('/logout','LoginController@logout');
 
 // Xử lý register
-Route::get('/register', 'RegisterController@create');
-Route::post('register', 'RegisterController@store');
+Route::get('/register', 'UserController@create');
+Route::post('/register', 'UserController@store');
 
 
 
 	
 Route::get('/admin', 'adminpageController@Dashboard')
 	->middleware('is_admin');
-// Xử lý các thao tác với người dùng
-Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung')
+// Xử lý các thao tác của admin với người dùng
+Route::get('/admin/nguoidung', 'UserController@index_admin')
 	->middleware('is_admin');
-	
-	
-Route::get('/admin/xemnguoidung/{id}','adminpageController@XemNguoiDung')
+Route::get('/admin/nguoidung/{id}','UserController@show_admin')
 	->middleware('is_admin');
-
-Route::get('/admin/suanguoidung/{id}','adminpageController@SuaNguoiDung')
+Route::get('/admin/nguoidung/{id}/edit','UserController@edit_admin')
 	->middleware('is_admin');
-	
-	
-Route::post('/admin/suanguoidung/{id}','UserController@update')
+Route::post('/admin/nguoidung/{id}/edit','UserController@update')
 	->middleware('is_admin');
-
+Route::post('/admin/nguoidung/{id}/delete','UserController@destroy')
+	->middleware('is_admin');
 
 // Xử lý mặt hàng ở front page
 Route::get('/xemmathang/{id}', 'MatHangController@view_single_product');
