@@ -59,5 +59,9 @@ Route::get('/admin/xemmathang/{id}','adminpageController@XemMatHang')
 	->middleware('is_admin');
 Route::get('/admin/quanlymathang', 'adminpageController@QuanLyMatHang')
 	->middleware('is_admin');
-
+//Xử lý loại mặt hàng ở admin page
+Route::get('/admin/xemloaimathang/{id}','adminpageController@XemLoaiMatHang')
+	->middleware('is_admin');
+Route::get('/admin/quanlyloaimathang', 'adminpageController@QuanLyLoaiMatHang')
+	->middleware('is_admin');
 
