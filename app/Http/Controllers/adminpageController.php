@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
 use App\User;
 use App\Model\MatHang;
 
@@ -26,13 +27,14 @@ class adminpageController extends Controller
 		$user = User::where('id','=',$id)->first();
 		return view('admin/nguoidung',['user' => $user, 'action'=>'edit']);
 	}
-	public function SuaThongTinNguoiDung($id){
-		$user = User::where('id','=',$id)->first();
+	public function SuaThongTinNguoiDung(Request $request, $id){
 		
 		
+		$user = UserController::update($request, $id);
+		var_dump($user);
+		//return view('admin/nguoidung',['user' => $user, 'action'=>'edit']);
 		
-		
-		return view('admin/nguoidung',['user' => $user, 'action'=>'view']);
+		//return view('admin/nguoidung',['user' => $user, 'action'=>'view']);
 	}
 
 	public function QuanLyMatHang(){

@@ -38,12 +38,16 @@ Route::get('/admin', 'adminpageController@Dashboard')
 // Xử lý các thao tác với người dùng
 Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung')
 	->middleware('is_admin');
+	
+	
 Route::get('/admin/xemnguoidung/{id}','adminpageController@XemNguoiDung')
 	->middleware('is_admin');
 
 Route::get('/admin/suanguoidung/{id}','adminpageController@SuaNguoiDung')
 	->middleware('is_admin');
-Route::post('/admin/suanguoidung/{id}','adminpageController@SuaThongTinNguoiDung')
+	
+	
+Route::post('/admin/suanguoidung/{id}','UserController@update')
 	->middleware('is_admin');
 
 

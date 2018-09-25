@@ -68,10 +68,8 @@ class UserController extends Controller
 		}
 		
 	}
-	public function update(Request $request){
+	public static function update(Request $request, $id){
 		$rules = [
-    		'username' =>'required|min:4|unique:users,username',
-    		'password' => 'required|min:4|confirmed',
 			'email' => 'required|e-mail|unique:users,email',
 			'HoVaTen' => 'required',
 			'NgaySinh' => 'date|required',
@@ -82,12 +80,6 @@ class UserController extends Controller
 			'Quan' => 'required',
     	];
     	$messages = [
-    		'username.required' => 'Tên đăng nhập là trường bắt buộc',
-    		'username.min' => 'Tên đăng nhập phải chứa ít nhất 4 ký tự',
-			'username.unique' =>'Tên đăng nhập đã được đăng ký',
-    		'password.required' => 'Mật khẩu là trường bắt buộc',
-    		'password.min' => 'Mật khẩu phải chứa ít nhất 4 ký tự',
-    		'password.confirmed' => 'Mật khẩu không khớp',
 			'email.e-mail' => 'Email không hợp lệ',
 			'email.required' => 'Email là trường bắt buộc',
 			'email.unique' => 'Email đã được đăng ký',
@@ -105,22 +97,18 @@ class UserController extends Controller
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
-			$request['Role']=2;
-			$request['Active']=0;
-			$user = User::create(request([
-				'username',
-				'email', 
-				'password',
-				'HoVaTen', 
-				'NgaySinh', 
-				'SoDienThoai', 
-				'GioiTinh', 
-				'DiaChi', 
-				'ThanhPho',
-				'Quan',
-				'Role',
-				'Active'
-			]));
+			
+			$user->username = $request['username'];
+			$user->email = $request['email'];
+			$user->password = $request['password'];
+			$user->HoVaTen = $request['HoVaTen'];
+			$user->NgaySinh = $request['NgaySinh'];
+			$user->SoDienThoai = $request['SoDienThoai'];
+			$user->GioiTinh = $request['GioiTinh'];
+			$user->DiaChi = $request['DiaChi'];
+			$user->ThanhPho = $request['ThanhPho'];
+			$user->Quan = $request['Quan'];
+			$user->save();
 			return $user;
 		}
 		
