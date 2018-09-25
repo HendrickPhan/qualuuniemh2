@@ -31,7 +31,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2">
-						<a href="{{url('/')}}"><img src="upload/logo.png" width="50" height="50"></a>
+						<a href="{{url('/')}}"><img src="/upload/logo.png" width="50" height="50"></a>
 					</div>
 					<div class="col-md-5" id="search-menu">
 						<input type="text" placeholder=" Tìm sản phẩm" id="searchproduct"/>
@@ -39,18 +39,18 @@
 					</div>
 					<div class="col-md-5" id="info-menu">
 						
-						<li><img src="upload/phone.png" width="25" height="25"/>0964.030.602</li>
+						<li><img src="/upload/phone.png" width="25" height="25"/>0964.030.602</li>
 						
 						@if($user = Auth::user())
-							<li><img src="upload/sign_out.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>
+							<li><img src="/upload/sign_out.png" width="25" height="25"/><a href="{{url('logout')}}"> Đăng Xuất</a></li>
 							@if($user->Role==1)
-								<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('admin')}}"> Admin page</a></li>
+								<li><img src="/upload/sign_in.png" width="25" height="25"/><a href="{{url('admin')}}"> Admin page</a></li>
 							@else
-								<li><img src="upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
+								<li><img src="/upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
 							@endif
 						@else
-						<li><img src="upload/sign_in.png" width="25" height="25"/><a href="{{url('login')}}"> Đăng nhập</a></li>
-						<li><img src="upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
+						<li><img src="/upload/sign_in.png" width="25" height="25"/><a href="{{url('login')}}"> Đăng nhập</a></li>
+						<li><img src="/upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
 						@endif
 					</div>
 				</div>

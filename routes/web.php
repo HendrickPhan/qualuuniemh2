@@ -49,7 +49,10 @@ Route::post('/admin/nguoidung/{id}/delete','UserController@destroy')
 
 // Xử lý mặt hàng ở front page
 Route::get('/xemmathang/{id}', 'MatHangController@view_single_product');
-
+//Xử lý giỏ hàng ở front page
+Route::get('/giohang',function () {
+    return view('cart');
+});;
 //Xử lý mặt hàng ở admin page
 Route::get('/admin/xemmathang/{id}','adminpageController@XemMatHang')
 	->middleware('is_admin');
