@@ -369,3 +369,12 @@ header .header-menu .nav-quanli a{
 #mathang_contain .section2 .cauhoi .ask-header{
 	margin-top:10px;
 }
+#table_giohang {
+	margin-top:30px;
+}
+.calculating_element{
+	border-bottom: 1px solid #000;
+}
+.total_calculating{
+	padding-top:20px;
+}

@@ -62,7 +62,7 @@
 					
 					<div class="comment row">
 						<div class="col-md-1"> 
-							<img class="user-avatar" href="#" src="upload/user_avatar.jpg"/>
+							<img class="user-avatar" href="#" src="/upload/user_avatar.jpg"/>
 						</div>
 						<div class="col-md-11">
 							<a><b>Người dùng 1</b><a/></br>
@@ -72,7 +72,7 @@
 					
 					<div class="comment row">
 						<div class="col-md-1"> 
-							<img class="user-avatar" href="#" src="upload/user_avatar.jpg"/>
+							<img class="user-avatar" href="#" src="/upload/user_avatar.jpg"/>
 						</div>
 						<div class="col-md-11">
 							<a><b>Người dùng 2</b><a/></br>
@@ -83,7 +83,7 @@
 					
 					<div class="comment row">
 						<div class="col-md-1"> 
-							<img class="user-avatar" href="#" src="upload/user_avatar.jpg"/>
+							<img class="user-avatar" href="#" src="/upload/user_avatar.jpg"/>
 						</div>
 						<div class="col-md-11">
 							<a><b>Người dùng 3</b><a/></br>

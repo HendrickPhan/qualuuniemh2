@@ -38,22 +38,21 @@ Route::get('/admin', 'adminpageController@Dashboard')
 // Xử lý các thao tác với người dùng
 Route::get('/admin/quanlynguoidung', 'adminpageController@QuanLyNguoiDung')
 	->middleware('is_admin');
-	
-	
 Route::get('/admin/xemnguoidung/{id}','adminpageController@XemNguoiDung')
 	->middleware('is_admin');
 
 Route::get('/admin/suanguoidung/{id}','adminpageController@SuaNguoiDung')
 	->middleware('is_admin');
-	
-	
-Route::post('/admin/suanguoidung/{id}','UserController@update')
+Route::post('/admin/suanguoidung/{id}','adminpageController@SuaThongTinNguoiDung')
 	->middleware('is_admin');
 
 
 // Xử lý mặt hàng ở front page
 Route::get('/xemmathang/{id}', 'MatHangController@view_single_product');
-
+//Xử lý giỏ hàng ở front page
+Route::get('/giohang',function () {
+    return view('cart');
+});;
 //Xử lý mặt hàng ở admin page
 Route::get('/admin/xemmathang/{id}','adminpageController@XemMatHang')
 	->middleware('is_admin');
