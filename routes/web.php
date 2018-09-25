@@ -33,12 +33,18 @@ Route::post('/register', 'UserController@store');
 
 
 	
-Route::get('/admin', 'adminpageController@Dashboard')
+Route::get('/admin', function(){
+	return view('admin/dashboard');
+})
 	->middleware('is_admin');
 // Xử lý các thao tác của admin với người dùng
 Route::get('/admin/nguoidung', 'UserController@index_admin')
 	->middleware('is_admin');
-Route::get('/admin/nguoidung/{id}','UserController@show_admin')
+Route::get('/admin/nguoidung/{id}/show','UserController@show_admin')
+	->middleware('is_admin');
+Route::get('/admin/nguoidung/create','UserController@create_admin')
+	->middleware('is_admin');
+Route::post('/admin/nguoidung/create','UserController@store_admin')
 	->middleware('is_admin');
 Route::get('/admin/nguoidung/{id}/edit','UserController@edit_admin')
 	->middleware('is_admin');
