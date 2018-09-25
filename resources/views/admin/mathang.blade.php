@@ -10,27 +10,28 @@
 		<hr>
 		<div class="form-group">
 			<label for="TenMatHang">Tên Mặt Hàng:</label>
-			<input type="text" id="TenMatHang" class="form-control" readonly value="{{$product->TenMatHang}}">
+			<input type="text" id="TenMatHang" class="form-control" readonly value="{{$MatHang->TenMatHang}}">
 		</div>		
 		<div class="form-group">
 			<label for="MoTa">Mô tả:</label>
-			<input type="text" id="MoTa" class="form-control" readonly value="{{$product->MoTa}}">
+			<textarea class="form-control" readonly>{{$MatHang->MoTa}}
+			</textarea>
 		</div>
 		<div class="form-group">
 			<label for="Gia">Giá:</label>
-			<input type="text" id="Gia" class="form-control" readonly value="{{$product->Gia}}">
+			<input type="text" id="Gia" class="form-control" readonly value="{{$MatHang->Gia}}">
 		</div>
 		<div class="form-group">
 			<label for="XuatXu">Xuất xứ:</label>
-			<input type="text" id="XuatXu" class="form-control" readonly value="{{$product->XuatXu}}">
+			<input type="text" id="XuatXu" class="form-control" readonly value="{{$MatHang->XuatXu}}">
 		</div>
 		<div class="form-group">
 			<label for="SoLuongTon">Số lượng tồn:</label>
-			<input type="text" id="SoLuongTon" class="form-control" readonly value="{{$product->SoLuongTon}}">
+			<input type="text" id="SoLuongTon" class="form-control" readonly value="{{$MatHang->SoLuongTon}}">
 		</div>
 		<div class="form-group">
 			<label for="idLoaiMatHang">ID Loại mặt hàng:</label>
-			<input type="text" id="idLoaiMatHang" class="form-control" readonly value="{{$product->idLoaiMatHang}}">
+			<input type="text" id="idLoaiMatHang" class="form-control" readonly value="{{$MatHang->idLoaiMatHang}}">
 		</div>
 	</div>
 @elseif($action == "add")

@@ -11,7 +11,7 @@
 	<div class="quanly" >
 		<button class="btn btn-success addbutton">Thêm người dùng</button>
 		<div class="user-info">
-			<table id="table_id" >
+			<table class="datatable" id="table_id" >
 				<thead>
 					<tr>
 						<th>ID</th>

@@ -11,7 +11,9 @@ class MatHang extends Model
         'TenMatHang', 
 		'Gia', 
 		'XuatXu', 
-		'SoLuongTon', 
+		'SoLuongTon',
+		'MoTa',
+		'idLoaiMatHang'
     ];
 	
 	protected $table = "mathang";

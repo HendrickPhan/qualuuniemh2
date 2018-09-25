@@ -41,7 +41,7 @@ class adminpageController extends Controller
 	}
 	public function XemMatHang($id){
 		$MatHang = MatHang::where('id','=',$id)->first();
-		return view('admin/mathang',['product' => $product, 'action'=>'view']);
+		return view('admin/mathang',['MatHang' => $MatHang, 'action'=>'view']);
 	}
 	
 	
