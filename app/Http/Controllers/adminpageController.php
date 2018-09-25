@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Model\MatHang;
+use App\Model\LoaiMatHang;
+use App\Model\DonHang;
 
 
 class adminpageController extends Controller
@@ -27,11 +29,7 @@ class adminpageController extends Controller
 		return view('admin/nguoidung',['user' => $user, 'action'=>'edit']);
 	}
 	public function SuaThongTinNguoiDung($id){
-		$user = User::where('id','=',$id)->first();
-		
-		
-		
-		
+		$user = User::where('id','=',$id)->first();	
 		return view('admin/nguoidung',['user' => $user, 'action'=>'view']);
 	}
 
@@ -44,5 +42,14 @@ class adminpageController extends Controller
 		return view('admin/mathang',['MatHang' => $MatHang, 'action'=>'view']);
 	}
 	
+	//Xử lý loại mặt hàng
+	public function QuanLyLoaiMatHang(){
+		$LoaiMatHangs = LoaiMatHang::all();
+		return view('admin/quanlyloaimathang',['LoaiMatHangs' => $LoaiMatHangs, 'action'=>'view']);
+	}
+	public function XemLoaiMatHang($id){
+		$LoaiMatHang = LoaiMatHang::where('id','=',$id)->first();
+		return view('admin/loaimathang',['LoaiMatHang' => $LoaiMatHang, 'action'=>'view']);
+	}
 	
 }
