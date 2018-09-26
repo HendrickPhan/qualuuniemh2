@@ -70,3 +70,5 @@ Route::get('/admin/xemloaimathang/{id}','adminpageController@XemLoaiMatHang')
 Route::get('/admin/quanlyloaimathang', 'adminpageController@QuanLyLoaiMatHang')
 	->middleware('is_admin');
 
+	
+Route::get('/themmathang', 'MatHangController@create_admin');
