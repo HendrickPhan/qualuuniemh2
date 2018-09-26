@@ -7,112 +7,72 @@
 		<h1>Thêm mặt hàng</h1>
 		<hr>
 		<form action="{{url('/admin/mathang/create')}}" method="POST">
-			@if($errors->has('username'))
+			@if($errors->has('TenMatHang'))
 				<div class="form-group">
-					<p style="color:red">{{$errors->first('username')}}</p>
+					<p style="color:red">{{$errors->first('TenMatHang')}}</p>
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="username">Tên tài khoản: </label>
-				<input type="text" id="username" name="username"  class="form-control" placeholder="tentaikhoan" value="{{old('username')}}" required />
+				<label for="TenMatHang">Tên mặt hàng: </label>
+				<input type="text" id="TenMatHang" name="TenMatHang"  class="form-control" placeholder="TenMatHang" value="{{old('TenMatHang')}}" required />
 			</div>
 			
-			<div class="form-group">
-				<label for="password">Mật khẩu:</label>
-				<input type= "password" id="password"  class="form-control" name="password" required />
-			</div>
-			@if($errors->has('password'))
+			@if($errors->has('Gia'))
 				<div class="form-group">
-					<p style="color:red">{{$errors->first('password')}}</p>
+					<p style="color:red">{{$errors->first('Gia')}}</p>
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="password">Nhập lại mật khẩu:</label>
-				<input type= "password" id="password_confirmation"  class="form-control" name="password_confirmation" required />
+				<label for="Gia">Giá mặt hàng:</label>
+				<input type="number" id="Gia"  class="form-control" name="Gia" value="{{old('Gia')}}required />
 			</div>
-			@if($errors->has('HoVaTen'))
+			@if($errors->has('XuatXu'))
 				<div class="form-group">
-					<p style="color:red">{{$errors->first('HoVaTen')}}</p>
+					<p style="color:red">{{$errors->first('XuatXu')}}</p>
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="HoVaTen">Họ và tên:</label>
-				<input type= "text" id="HoVaTen"  class="form-control" name="HoVaTen" placeholder="Nguyễn Văn A" value="{{old('HoVaTen')}}" required />
+				<label for="XuatXu">Xuất xứ:</label>
+				<input type= "text" id="XuatXu"  class="form-control" name="XuatXu" value="{{old('XuatXu')}}" required />
 			</div>
-			@if($errors->has('NgaySinh'))
+			@if($errors->has('SoLuongTon'))
 				<div class="form-group">
-					<p style="color:red">{{$errors->first('NgaySinh')}}</p>
+					<p style="color:red">{{$errors->first('SoLuongTon')}}</p>
 				</div>
 			@endif
 		
 			<div class="form-group">
-				<label for="NgaySinh">Ngày sinh:</label>
-				<input type= "date" id="NgaySinh"  class="form-control" name="NgaySinh" value="{{old('NgaySinh')}}" required />
+				<label for="SoLuongTon">Số lượng tồn:</label>
+				<input type="number" id="SoLuongTon"  class="form-control" name="SoLuongTon" value="{{old('SoLuongTon')}}" required />
 			</div>
-			@if($errors->has('GioiTinh'))
+			@if($errors->has('MoTa'))
 				<div class="form-group">
-					<p style="color:red">{{$errors->first('GioiTinh')}}</p>
+					<p style="color:red">{{$errors->first('MoTa')}}</p>
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="GioiTinh">Giới tính:</label>
-				<select  id="GioiTinh" name="GioiTinh"  class="form-control" value="{{old('GioiTinh')}}" required >
-					<option value="Nam">Nam</option>
-					<option value="Nữ">Nữ</option>
-					<option value="Khác">Khác</option>
+				<label for="MoTa">Mô tả:</label>
+				<textarea id="MoTa"  class="form-control" name="MoTa" required>{{old('MoTa')}}</textarea>
+			</div>
+			@if($errors->has('idLoaiMatHang'))
+				<div class="form-group">
+					<p style="color:red">{{$errors->first('idLoaiMatHang')}}</p>
+				</div>
+			@endif
+			<div class="form-group">
+				<label for="idLoaiMatHang">Loại mặt hàng</label>
+				<select id="idLoaiMatHang"  class="form-control" name="idLoaiMatHang" value="{{old('idLoaiMatHang')}}" required>
+				@foreach ($loaimathangs as $loaimathang)
+					<option value="{{$loaimathang->id}}">{{$loaimathang->TenLoaiMatHang}}</option>
+				@endforeach
 				</select>
 			</div>
-			@if($errors->has('SoDienThoai'))
-				<div class="form-group">
-					<p style="color:red">{{$errors->first('SoDienThoai')}}</p>
-				</div>
+			
+			@if($errors->has('idLoaiMatHang'))
+				
 			@endif
 			<div class="form-group">
-				<label for="SoDienThoai">Số điện thoại:</label>
-				<input type="number" id="SoDienThoai" name="SoDienThoai" class="form-control" value="{{old('SoDienThoai')}}" required >
-			</div>
-			@if($errors->has('email'))
-				<div class="form-group">
-					<p style="color:red">{{$errors->first('email')}}</p>
-				</div>
-			@endif
-			<div class="form-group">
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" class="form-control" value="{{old('email')}}" required >
-			</div>
-			@if($errors->has('DiaChi'))
-				<div class="form-group">
-					<p style="color:red">{{$errors->first('DiaChi')}}</p>
-				</div>
-			@endif
-			<div class="form-group">
-				<label for="DiaChi">Địa chỉ:</label>
-				<input type= "text" id="DiaChi" name="DiaChi"  class="form-control" placeholder="123/đường 1" value="{{old('DiaChi')}}" required />
-			</div>
-			@if($errors->has('ThanhPho'))
-				<div class="form-group">
-					<p style="color:red">{{$errors->first('ThanhPho')}}</p>
-				</div>
-			@endif
-			<div class="form-group">
-				<label for="ThanhPho">Thành phố:</label>
-				<select id="ThanhPho" name="ThanhPho"  class="form-control" value="{{old('ThanhPho')}}" required />
-					<option value="HCM">Hồ Chí Minh</option>
-				</select>
-			</div>
-			@if($errors->has('Quan'))
-				<div class="form-group">
-					<p style="color:red">{{$errors->first('Quan')}}</p>
-				</div>
-			@endif
-			<div class="form-group">
-				<label for="Quan">Quận:</label>
-				<select id="Quan" name="Quan"  class="form-control" value="{{old('Quan')}}" required />
-					<option value="Q1">Quận 1</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<button class="btn btn-info" type="submit" id="loginbutton">Thêm</button>
+				<button class="btn btn-info" type="submit">Thêm</button>
 			</div>
 			
 			{!! csrf_field() !!}
