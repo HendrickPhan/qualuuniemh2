@@ -55,7 +55,7 @@ class User extends Authenticatable
 		'NgaySinh.required' => 'NgaySinh là trường bắt buộc', 
 		'NgaySinh.date' => 'NgaySinh là không hợp lệ', 
 		'SoDienThoai.required' => 'SoDienThoai là trường bắt buộc', 
-		'SoDienThoai.numberic' => 'SoDienThoai không hợp lệ', 
+		'SoDienThoai.numeric' => 'SoDienThoai không hợp lệ', 
 		'GioiTinh.required' => 'GioiTinh là trường bắt buộc', 
 		'DiaChi.required' => 'DiaChi là trường bắt buộc', 
 		'ThanhPho.required' => 'ThanhPho là trường bắt buộc',

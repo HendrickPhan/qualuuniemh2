@@ -3,10 +3,10 @@
 
 
 <div class="container">
-	<div class="themNguoiDung">
-		<h1>Thêm người dùng</h1>
+	<div class="themMatHang">
+		<h1>Thêm mặt hàng</h1>
 		<hr>
-		<form action="{{url('/admin/nguoidung/create')}}" method="POST">
+		<form action="{{url('/admin/mathang/create')}}" method="POST">
 			@if($errors->has('username'))
 				<div class="form-group">
 					<p style="color:red">{{$errors->first('username')}}</p>
