@@ -8,14 +8,14 @@ use Auth;
 use Illuminate\Support\MessageBag;
 use App\User;
 
-class MatHangController extends Controller
+class UserController extends Controller
 {
 	
 	public function index_admin()
     {
         // for admin page
-		$mathangs = MatHang::all();
-		return view('admin/user/index',['mathangs' => $mathangs]);
+		$users = User::where('role','=','2')->get();
+		return view('admin/user/index',['users' => $users]);
     }
 	public function create_admin()
     {
