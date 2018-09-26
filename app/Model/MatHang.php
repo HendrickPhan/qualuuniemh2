@@ -19,7 +19,7 @@ class MatHang extends Model
 	public $rules = [
 		'TenMatHang' =>'required',
 		'Gia' => 'required|numeric',
-		'SoLuongTon' => 'required',
+		'SoLuongTon' => 'required|numeric',
 		'idLoaiMatHang' => 'required'
 	];
 	public $messages = [

@@ -8,14 +8,14 @@ use Auth;
 use Illuminate\Support\MessageBag;
 use App\User;
 
-class MatHangController extends Controller
+class LoaiMatHangController extends Controller
 {
 	
 	public function index_admin()
     {
         // for admin page
-		$mathangs = MatHang::all();
-		return view('admin/mathang/index',['mathangs' => $mathangs]);
+		$loaimathangs = LoaiMatHang::all();
+		return view('admin/loaimathang/index',['loaimathangs' => $loaimathangs]);
     }
 	public function create_admin()
     {
@@ -51,14 +51,14 @@ class MatHangController extends Controller
 	public function show_admin($id)
     {
         //
-		$mathang = MatHang::where('id','=',$id)->first();
-		return view('admin/mathang/show',['user' => $user]);
+		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
+		return view('admin/loaimathang/show',['user' => $user]);
     }
 	public function edit_admin($id)
     {
         //
-		$mathang = MatHang::where('id','=',$id)->first();
-		return view('admin/mathang/edit',['mathang' => $mathang]);
+		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
+		return view('admin/loaimathang/edit',['loaimathang' => $loaimathang]);
     }
 	
 	
@@ -110,31 +110,23 @@ class MatHangController extends Controller
 	public function update(Request $request, $id)
     {
         //
-		$mathang = MatHang::where('id','=',$id)->first();
+		$loaimathang = MatHang::where('id','=',$id)->first();
 		
 		
-		$validator = Validator::make($request->all(), $mathang->rules, $mathang->messages);
+		$validator = Validator::make($request->all(), $loaimathang->rules, $loaimathang->messages);
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
-			$mathang->TenMatHang = $request['TenMatHang'];
-			$mathang->Gia = $request['Gia'];
-			$mathang->XuatXu = $request['XuatXu'];
-			$mathang->SoLuongTon = $request['SoLuongTon'];
-			$mathang->MoTa = $request['MoTa'];
-			$mathang->idLoaiMatHang = $request['idLoaiMatHang'];
-
-
-
-			$mathang->save();
+			$loaimathang->TenLoaiMatHang = $request['TenLoaiMatHang'];
+			$loaimathang->save();
 			return redirect()->back();
 		}
     }
 	public function destroy($id)
     {
         //
-		$mathang = MatHang::where('id','=',$id)->first();
-		$mathang->delete();
+		$loaimathang = MatHang::where('id','=',$id)->first();
+		$loaimathang->delete();
 		return redirect()->back();
     }
 }

@@ -2,76 +2,65 @@
 @section('content')
 
 <div class="container">
-	<div class="suaNguoiDung">
-		<h1>Sửa người dùng</h1>
+	<div class="suaMatHang">
+		<h1>Sửa mặt hàng</h1>
 		<hr>
-		<form action='{{url("/admin/nguoidung/$user->id/edit")}}' method="POST">
-			<div class="form-group">
-				<label for="username">Tên tài khoản:</label>
-				<input type="text" name="username" id="username" class="form-control" value="{{$user->username}}" readonly>
-			</div>
-			@if($errors->has('HoVaTen'))
+		<form action='{{url("/admin/mathang/$mathang->id/edit")}}' method="POST">
+			@if($errors->has('tenmathang'))
 				<tr>
-					<p style="color:red">{{$errors->first('HoVaTen')}}</p>
+					<p style="color:red">{{$errors->first('tenmathang')}}</p>
 				</tr>
 			@endif
 			<div class="form-group">
-				<label for="HoVaTen">Họ và tên:</label>
-				<input type="text" name="HoVaTen" id="HoVaTen" class="form-control" value="{{$user->HoVaTen}}">
+				<label for="tenmathang">Tên mặt hàng:</label>
+				<input type="text" name="tenmathang" id="tenmathang" class="form-control" value="{{$mathang->tenmathang}}">
 			</div>
 			
-			@if($errors->has('NgaySinh'))
+			@if($errors->has('Gia'))
 				<tr>
-					<p style="color:red">{{$errors->first('NgaySinh')}}</p>
+					<p style="color:red">{{$errors->first('Gia')}}</p>
 				</tr>
 			@endif
 			<div class="form-group">
-				<label for="NgaySinh">Ngày sinh:</label>
-				<input type="date" name="NgaySinh" id="NgaySinh" class="form-control" value="{{$user->NgaySinh}}">
+				<label for="Gia">Giá:</label>
+				<input type="text" name="Gia" id="Gia" class="form-control" value="{{$mathang->Gia}}">
 			</div>
 			
-			@if($errors->has('GioiTinh'))
+			@if($errors->has('XuatXu'))
 			<tr>
-				<p style="color:red">{{$errors->first('GioiTinh')}}</p>
+				<p style="color:red">{{$errors->first('XuatXu')}}</p>
 			</tr>
 			@endif
 			<div class="form-group">
-				<label for="GioiTinh">Giới Tính:</label>
-				<select  class="form-control" id="GioiTinh" name="GioiTinh" value="{{$user->GioiTinh}}">
-					<option value="Nam">Nam</option>
-					<option value="Nữ">Nữ</option>
-					<option value="Khác">Khác</option>
-				</select>
+				<label for="XuatXu">Xuất Xứ:</label>
+				<input type="text" name="XuatXu" id="XuatXu" class="form-control" value="{{$mathang->XuatXu}}">
 			</div>
-			@if($errors->has('SoDienThoai'))
+			@if($errors->has('SoLuongTon'))
 			<tr>
-				<p style="color:red">{{$errors->first('SoDienThoai')}}</p>
+				<p style="color:red">{{$errors->first('SoLuongTon')}}</p>
 			</tr>
 			@endif
 			<div class="form-group">
-				<label for="SoDienThoai">Số điện thoại:</label>
-				<input type="number" name="SoDienThoai" id="SoDienThoai" class="form-control" value="{{$user->SoDienThoai}}">
+				<label for="SoLuongTon">Số lương tồn:</label>
+				<input type="number" name="SoLuongTon" id="SoLuongTon" class="form-control" value="{{$mathang->SoLuongTon}}">
 			</div>
-			@if($errors->has('email'))
+			@if($errors->has('MoTa'))
 			<tr>
-				<p style="color:red">{{$errors->first('email')}}</p>
+				<p style="color:red">{{$errors->first('MoTa')}}</p>
 			</tr>
 			@endif
 			<div class="form-group">
-				<label for="email">Email:</label>
-				<input type="email" name="email" id="email" class="form-control" value="{{$user->email}}">
+				<label for="MoTa">Mô tả:</label>
+				<input type="text" name="MoTa" id="MoTa" class="form-control" value="{{$mathang->MoTa}}">
 			</div>
+			@if($errors->has('idLoaiMatHang'))
+			<tr>
+				<p style="color:red">{{$errors->first('idLoaiMatHang')}}</p>
+			</tr>
+			@endif
 			<div class="form-group">
-				<label for="DiaChi">Địa chỉ:</label>
-				<input type="text" name="DiaChi" id="DiaChi" class="form-control" value="{{$user->DiaChi}}">
-			</div>
-			<div class="form-group">
-				<label for="ThanhPho">Thành phố:</label>
-				<input type="text" name="ThanhPho" id="ThanhPho" class="form-control" value="{{$user->ThanhPho}}">
-			</div>
-			<div class="form-group">
-				<label for="Quan">Quận:</label>
-				<input type="text" name="Quan" id="Quan" class="form-control" value="{{$user->Quan}}">
+				<label for="idLoaiMatHang">id Loại mặt hàng:</label>
+				<input type="text" name="idLoaiMatHang" id="idLoaiMatHang" class="form-control" value="{{$mathang->idLoaiMatHang}}">
 			</div>
 			<div class="form-group">
 				<button class="btn btn-info" type="submit" id="loginbutton">Sửa đổi</button>
