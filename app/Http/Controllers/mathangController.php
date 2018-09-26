@@ -15,7 +15,7 @@ class MatHangController extends Controller
     {
         // for admin page
 		$mathangs = MatHang::all();
-		return view('admin/user/index',['mathangs' => $mathangs]);
+		return view('admin/mathang/index',['mathangs' => $mathangs]);
     }
 	public function create_admin()
     {
@@ -51,19 +51,20 @@ class MatHangController extends Controller
 	public function show_admin($id)
     {
         //
-		$user = User::where('id','=',$id)->first();
-		return view('admin/user/show',['user' => $user]);
+		$mathang = MatHang::where('id','=',$id)->first();
+		return view('admin/mathang/show',['user' => $user]);
     }
 	public function edit_admin($id)
     {
         //
-		$user = User::where('id','=',$id)->first();
-		return view('admin/user/edit',['user' => $user]);
+		$mathang = MatHang::where('id','=',$id)->first();
+		return view('admin/mathang/edit',['mathang' => $mathang]);
     }
 	
 	public function show($id)
     {
-        //
+        $mathang = MatHang::where('id','=',$id)->first();
+		return view('/mathang/show',['mathang' => $mathang]);
 
     }
 	public function edit($id)
@@ -73,7 +74,7 @@ class MatHangController extends Controller
 	public function update(Request $request, $id)
     {
         //
-		$user = User::where('id','=',$id)->first();
+		$mathang = MatHang::where('id','=',$id)->first();
 		$email = $request['email'];
 		if($user->email == $request['email']){
 			unset($request['email']);	
