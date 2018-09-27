@@ -9,25 +9,25 @@
 		<hr>
 	</div>
 	<div class="quanly" >
-		<a href='{{url("/admin/nguoidung/create")}}' class="btn btn-success addbutton">Thêm người dùng</a>
-		<div class="user-info">
+		<a href='{{url("/admin/mathang/create")}}' class="btn btn-success addbutton">Thêm mặt hàng</a>
+		<div class="product-info">
 			<table class="datatable" id="table_id" >
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Tên đăng nhập</th>
-						<th>Email</th>
-						<th>Số điện thoại</th>
+						<th>Tên mặt hàng</th>
+						<th>Giá</th>
+						<th>Số lượng tồn</th>
 						<th>Hành động</th>
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($users as $user)
+					@foreach ($mathangs as $mathang)
 					<tr>
-						<td>{{$user->id}}</td>
-						<td>{{$user->username}}</td>
-						<td>{{$user->email}}</td>
-						<td>{{$user->SoDienThoai}}</td>
+						<td>{{$mathang->id}}</td>
+						<td>{{$mathang->TenMatHang}}</td>
+						<td>{{$mathang->Gia}}</td>
+						<td>{{$mathang->SoLuongTon}}</td>
 						<td>
 						
 						<a href='{{url("/admin/nguoidung/$user->id/show")}}' class="btn btn-info">Xem</a>
