@@ -8,14 +8,14 @@ use Auth;
 use Illuminate\Support\MessageBag;
 use App\User;
 
-class LoaiMatHangController extends Controller
+class DonHangController extends Controller
 {
 	
 	public function index_admin()
     {
         // for admin page
-		$loaimathangs = LoaiMatHang::all();
-		return view('admin/loaimathang/index',['loaimathangs' => $loaimathangs]);
+		$donhangs = DonHang::all();
+		return view('admin/donhang/index',['donhangs' => $donhangs]);
     }
 	public function create_admin()
     {
@@ -51,14 +51,14 @@ class LoaiMatHangController extends Controller
 	public function show_admin($id)
     {
         //
-		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		return view('admin/loaimathang/show',['user' => $user]);
+		$donhang = DonHang::where('id','=',$id)->first();
+		return view('admin/donhang/show',['donhang' => $donhang]);
     }
 	public function edit_admin($id)
     {
         //
-		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		return view('admin/loaimathang/edit',['loaimathang' => $loaimathang]);
+		$donhang = DonHang::where('id','=',$id)->first();
+		return view('admin/donhang/edit',['donhang' => $donhang]);
     }
 	
 	
@@ -100,7 +100,7 @@ class LoaiMatHangController extends Controller
 	public function show($id)
     {
         $loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		return view('/loaimathang/show',['loaimathang' => $loaimathang]);
+		return view('/loaimathang/show',['mathang' => $loaimathang]);
 
     }
 	public function edit($id)
