@@ -24,7 +24,7 @@
 			@endif
 			<div class="form-group">
 				<label for="Gia">Giá mặt hàng:</label>
-				<input type="number" id="Gia"  class="form-control" name="Gia" value="{{old('Gia')}}required />
+				<input type="number" id="Gia"  class="form-control" name="Gia" value="{{old('Gia')}}"required />
 			</div>
 			@if($errors->has('XuatXu'))
 				<div class="form-group">
@@ -67,10 +67,6 @@
 				@endforeach
 				</select>
 			</div>
-			
-			@if($errors->has('idLoaiMatHang'))
-				
-			@endif
 			<div class="form-group">
 				<button class="btn btn-info" type="submit">Thêm</button>
 			</div>

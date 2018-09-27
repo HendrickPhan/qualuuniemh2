@@ -99,8 +99,8 @@ class LoaiMatHangController extends Controller
     }
 	public function show($id)
     {
-        $mathang = MatHang::where('id','=',$id)->first();
-		return view('/mathang/show',['mathang' => $mathang]);
+        $loaimathang = LoaiMatHang::where('id','=',$id)->first();
+		return view('/loaimathang/show',['mathang' => $loaimathang]);
 
     }
 	public function edit($id)
@@ -110,7 +110,7 @@ class LoaiMatHangController extends Controller
 	public function update(Request $request, $id)
     {
         //
-		$loaimathang = MatHang::where('id','=',$id)->first();
+		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
 		
 		
 		$validator = Validator::make($request->all(), $loaimathang->rules, $loaimathang->messages);
@@ -125,7 +125,7 @@ class LoaiMatHangController extends Controller
 	public function destroy($id)
     {
         //
-		$loaimathang = MatHang::where('id','=',$id)->first();
+		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
 		$loaimathang->delete();
 		return redirect()->back();
     }
