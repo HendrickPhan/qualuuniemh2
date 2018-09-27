@@ -30,12 +30,12 @@
 						<td>{{$mathang->SoLuongTon}}</td>
 						<td>
 						
-						<a href='{{url("/admin/nguoidung/$user->id/show")}}' class="btn btn-info">Xem</a>
-						<a href='{{url("/admin/nguoidung/$user->id/edit")}}' class="btn btn-danger">Sửa</a>
+						<a href='{{url("/admin/mathang/$mathang->id/show")}}' class="btn btn-info">Xem</a>
+						<a href='{{url("/admin/mathang/$mathang->id/edit")}}' class="btn btn-danger">Sửa</a>
 						
-						<form method="POST" action='{{url("/admin/nguoidung/$user->id/delete")}}' style="display: inline-block">
+						<form method="POST" action='{{url("/admin/mathang/$mathang->id/delete")}}' style="display: inline-block">
 							<input type="hidden" value="$user->id" name="delete_user" />
-							<button onclick="return confirm('Bạn có chắc muốn xóa người dùng này không?')" class="btn btn-secondary">
+							<button onclick="return confirm('Bạn có chắc muốn xóa mặt hàng này không?')" class="btn btn-secondary">
 							Xóa
 							</button>
 							{!! csrf_field() !!}

@@ -55,15 +55,26 @@ Route::post('/admin/nguoidung/{id}/delete','UserController@destroy')
 
 // Xử lý mặt hàng ở front page
 Route::get('/mathang/{id}', 'MatHangController@show');
-//Xử lý giỏ hàng ở front page
-Route::get('/giohang',function () {
-    return view('cart');
-});;
 //Xử lý loại mặt hàng ở admin page
+Route::get('/admin/mathang','MatHangController@index_admin')
+	->middleware('is_admin');
+Route::get('/admin/mathang/{id}/show','MatHangController@show_admin')
+->middleware('is_admin');
 Route::get('/admin/mathang/create','MatHangController@create_admin')
 	->middleware('is_admin');
 Route::post('/admin/mathang/create','MatHangController@store_admin')
 	->middleware('is_admin');
-
+Route::get('/admin/mathang/{id}/edit','MatHangController@edit_admin')
+	->middleware('is_admin');
+Route::post('/admin/mathang/{id}/edit','MatHangController@update')
+	->middleware('is_admin');
+Route::post('/admin/mathang/{id}/delete','MatHangController@destroy')
+	->middleware('is_admin');
+	
 	
 Route::get('/themmathang', 'MatHangController@create_admin');
+
+//Xử lý giỏ hàng ở front page
+Route::get('/giohang',function () {
+    return view('cart');
+});;
