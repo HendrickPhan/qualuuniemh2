@@ -54,20 +54,15 @@ Route::post('/admin/nguoidung/{id}/delete','UserController@destroy')
 	->middleware('is_admin');
 
 // Xử lý mặt hàng ở front page
-Route::get('/xemmathang/{id}', 'MatHangController@view_single_product');
+Route::get('/mathang/{id}', 'MatHangController@show');
 //Xử lý giỏ hàng ở front page
 Route::get('/giohang',function () {
     return view('cart');
 });;
-//Xử lý mặt hàng ở admin page
-Route::get('/admin/xemmathang/{id}','adminpageController@XemMatHang')
-	->middleware('is_admin');
-Route::get('/admin/quanlymathang', 'adminpageController@QuanLyMatHang')
-	->middleware('is_admin');
 //Xử lý loại mặt hàng ở admin page
-Route::get('/admin/xemloaimathang/{id}','adminpageController@XemLoaiMatHang')
+Route::get('/admin/mathang/create','MatHangController@create_admin')
 	->middleware('is_admin');
-Route::get('/admin/quanlyloaimathang', 'adminpageController@QuanLyLoaiMatHang')
+Route::post('/admin/mathang/create','MatHangController@store_admin')
 	->middleware('is_admin');
 
 	

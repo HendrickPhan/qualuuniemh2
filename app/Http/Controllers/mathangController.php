@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use Validator;
 use Auth;
 use Illuminate\Support\MessageBag;
-use App\User;
+use App\Model\MatHang;
 use App\Model\LoaiMatHang;
+use App\Model\HinhAnh;
 
 class MatHangController extends Controller
 {
@@ -26,28 +27,38 @@ class MatHangController extends Controller
     }
 	public function store_admin(Request $request)
     {
-        $user = new User;
-		$validator = Validator::make($request->all(), $user->rules, $user->messages);
+        $mathang = new MatHang;
+		$validator = Validator::make($request->all(), $mathang->rules, $mathang->messages);
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
-			$request['Role']=2;
-			$request['Active']=0;
-			$user = User::create(request([
-				'username',
-				'email', 
-				'password',
-				'HoVaTen', 
-				'NgaySinh', 
-				'SoDienThoai', 
-				'GioiTinh', 
-				'DiaChi', 
-				'ThanhPho',
-				'Quan',
-				'Role',
-				'Active'
+
+			
+			$mathang = MatHang::create(request([
+				'TenMatHang',
+				'Gia', 
+				'XuatXu',
+				'SoLuongTon', 
+				'MoTa', 
+				'idLoaiMatHang'
 			]));
-			return redirect('/admin/nguoidung');
+			if($request->hasFile('hinhanh')) {
+				$files = $request->file('hinhanh');
+				$path = public_path() . '/upload/mathang/mathang'.$mathang->id;
+				foreach($files as $file){
+					$file->move($path, $file->getClientOriginalName() );
+					$hinhanh = HinhAnh::create(
+						array(
+							'type' => "mathang",
+							'idContainer' => $mathang->id,
+							'URL' => '/upload/mathang/mathang' . $mathang->id .'/' .$file->getClientOriginalName()
+						)
+					);
+				}
+				
+			}
+			
+			return redirect('/admin/mathang');
 		}
     }
 	public function show_admin($id)
@@ -102,7 +113,8 @@ class MatHangController extends Controller
 	public function show($id)
     {
         $mathang = MatHang::where('id','=',$id)->first();
-		return view('/mathang/show',['mathang' => $mathang]);
+		$hinhanhs = HinhAnh::where('idContainer','=',$id)->get();
+		return view('/mathang/show',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs]);
 
     }
 	public function edit($id)

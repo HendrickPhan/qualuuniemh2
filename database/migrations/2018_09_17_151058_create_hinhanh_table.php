@@ -15,8 +15,9 @@ class CreateHinhanhTable extends Migration
     {
         Schema::create('hinhanh', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('idMatHang',50);
-			$table->string('URL',1000);//Chỗ này t không biết phải để thuộc tính gì, hình như lavarel không hỗ trợ url
+			$table->string('type',50);
+            $table->string('idContainer',50);
+			$table->string('URL',1000);
         });
     }
 

@@ -6,7 +6,7 @@
 	<div class="themMatHang">
 		<h1>Thêm mặt hàng</h1>
 		<hr>
-		<form action="{{url('/admin/mathang/create')}}" method="POST">
+		<form action="{{url('/admin/mathang/create')}}" method="POST" enctype="multipart/form-data">
 			@if($errors->has('TenMatHang'))
 				<div class="form-group">
 					<p style="color:red">{{$errors->first('TenMatHang')}}</p>
@@ -24,8 +24,9 @@
 			@endif
 			<div class="form-group">
 				<label for="Gia">Giá mặt hàng:</label>
-				<input type="number" id="Gia"  class="form-control" name="Gia" value="{{old('Gia')}}required />
+				<input type="number" id="Gia"  class="form-control" name="Gia" value="{{old('Gia')}}" required />
 			</div>
+
 			@if($errors->has('XuatXu'))
 				<div class="form-group">
 					<p style="color:red">{{$errors->first('XuatXu')}}</p>
@@ -60,7 +61,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<label for="idLoaiMatHang">Loại mặt hàng</label>
+				<label for="idLoaiMatHang">Loại mặt hàng:</label>
 				<select id="idLoaiMatHang"  class="form-control" name="idLoaiMatHang" value="{{old('idLoaiMatHang')}}" required>
 				@foreach ($loaimathangs as $loaimathang)
 					<option value="{{$loaimathang->id}}">{{$loaimathang->TenLoaiMatHang}}</option>
@@ -68,9 +69,16 @@
 				</select>
 			</div>
 			
-			@if($errors->has('idLoaiMatHang'))
-				
+			@if($errors->has('hinhanh'))
+				<div class="form-group">
+					<p style="color:red">{{$errors->first('hinhanh')}}</p>
+				</div>
 			@endif
+			<div class="form-group">
+				<label for="hinhanh">Hình ảnh:</label>
+				<input type="file"  class="form-control" name="hinhanh[]" value="{{old('hinhanh')}}" required multiple />
+			</div>
+	
 			<div class="form-group">
 				<button class="btn btn-info" type="submit">Thêm</button>
 			</div>
