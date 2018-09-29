@@ -378,3 +378,9 @@ header .header-menu .nav-quanli a{
 .total_calculating{
 	padding-top:20px;
 }
+.fixed_size_img{
+	width: 400px !important;
+	height: 400px !important;
+	object-fit: cover;
+	
+}

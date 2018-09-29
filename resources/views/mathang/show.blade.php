@@ -18,6 +18,9 @@
 				<div class="xuatxu">
 					<label>Xuất xứ:</label> <span>{{$mathang->XuatXu}}</span>
 				</div>
+				<div class="xuatxu">
+					<label>Loại mặt hàng:</label> <span>{{$loaimathang->TenLoaiMatHang}}</span>
+				</div>
 				<div class="description">
 				
 					<p>

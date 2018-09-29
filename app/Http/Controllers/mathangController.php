@@ -61,70 +61,28 @@ class MatHangController extends Controller
 			return redirect('/admin/mathang');
 		}
     }
-	public function show_admin($id)
-    {
-        //
-		$mathang = MatHang::where('id','=',$id)->first();
-		return view('admin/mathang/show',['user' => $user]);
-    }
 	public function edit_admin($id)
     {
         //
 		$mathang = MatHang::where('id','=',$id)->first();
-		return view('admin/mathang/edit',['mathang' => $mathang]);
+		$hinhanhs = HinhAnh::where('idContainer','=',$id)->get();
+		$loaimathangs = LoaiMatHang::all();
+		return view('admin/mathang/edit',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs, 'loaimathangs'=>$loaimathangs]);
     }
 	
-	
-	
-	public function create()
-    {
-        //
-		return view('user/create');
-    }
-	public function store(Request $request)
-    {
-        //
-		$user = new User;
-		$validator = Validator::make($request->all(), $user->rules, $user->messages);
-		if ($validator->fails()) {
-    		return redirect()->back()->withErrors($validator)->withInput();
-    	} else {
-			$request['Role']=2;
-			$request['Active']=0;
-			$user = User::create(request([
-				'username',
-				'email', 
-				'password',
-				'HoVaTen', 
-				'NgaySinh', 
-				'SoDienThoai', 
-				'GioiTinh', 
-				'DiaChi', 
-				'ThanhPho',
-				'Quan',
-				'Role',
-				'Active'
-			]));
-			
-			auth()->login($user);
-			return redirect('/');
-		}
-    }
 	public function show($id)
     {
         $mathang = MatHang::where('id','=',$id)->first();
 		$hinhanhs = HinhAnh::where('idContainer','=',$id)->get();
-		return view('/mathang/show',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs]);
+		$loaimathang = LoaiMatHang::where('id','=',$mathang->idLoaiMatHang)->first();
+		return view('/mathang/show',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs, 'loaimathang'=>$loaimathang]);
 
     }
-	public function edit($id)
-    {
-        //
-    }
-	public function update(Request $request, $id)
+	public function update_admin(Request $request, $id)
     {
         //
 		$mathang = MatHang::where('id','=',$id)->first();
+		
 		
 		
 		$validator = Validator::make($request->all(), $mathang->rules, $mathang->messages);
@@ -137,10 +95,31 @@ class MatHangController extends Controller
 			$mathang->SoLuongTon = $request['SoLuongTon'];
 			$mathang->MoTa = $request['MoTa'];
 			$mathang->idLoaiMatHang = $request['idLoaiMatHang'];
-
-
-
 			$mathang->save();
+			if($request->hasFile('hinhanh')) {
+				$files = $request->file('hinhanh');
+				$path = public_path() . '/upload/mathang/mathang'.$mathang->id;
+				foreach($files as $file){
+					$file->move($path, $file->getClientOriginalName() );
+					$hinhanh = HinhAnh::create(
+						array(
+							'type' => "mathang",
+							'idContainer' => $mathang->id,
+							'URL' => '/upload/mathang/mathang' . $mathang->id .'/' .$file->getClientOriginalName()
+						)
+					);
+				}
+				
+			}
+			$delete_image_ids = $request['delete_image'];
+			foreach($delete_image_ids as $delete_image_id){
+				
+				$hinhanh = HinhAnh::where('id','=',$delete_image_id)->first();
+				if($hinhanh){
+					$hinhanh->delete();
+				}
+			}
+			
 			return redirect()->back();
 		}
     }
@@ -149,6 +128,8 @@ class MatHangController extends Controller
         //
 		$mathang = MatHang::where('id','=',$id)->first();
 		$mathang->delete();
+		$hinhanhs = HinhAnh::where('idContainer','=',$id)->delete();
+		
 		return redirect()->back();
     }
 }

@@ -58,7 +58,7 @@ Route::get('/mathang/{id}', 'MatHangController@show');
 //Xử lý loại mặt hàng ở admin page
 Route::get('/admin/mathang','MatHangController@index_admin')
 	->middleware('is_admin');
-Route::get('/admin/mathang/{id}/show','MatHangController@show_admin')
+Route::get('/admin/mathang/{id}/show','MatHangController@show')
 ->middleware('is_admin');
 Route::get('/admin/mathang/create','MatHangController@create_admin')
 	->middleware('is_admin');
@@ -66,7 +66,7 @@ Route::post('/admin/mathang/create','MatHangController@store_admin')
 	->middleware('is_admin');
 Route::get('/admin/mathang/{id}/edit','MatHangController@edit_admin')
 	->middleware('is_admin');
-Route::post('/admin/mathang/{id}/edit','MatHangController@update')
+Route::post('/admin/mathang/{id}/edit','MatHangController@update_admin')
 	->middleware('is_admin');
 Route::post('/admin/mathang/{id}/delete','MatHangController@destroy')
 	->middleware('is_admin');

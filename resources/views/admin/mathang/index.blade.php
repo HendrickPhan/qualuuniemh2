@@ -30,7 +30,7 @@
 						<td>{{$mathang->SoLuongTon}}</td>
 						<td>
 						
-						<a href='{{url("/admin/mathang/$mathang->id/show")}}' class="btn btn-info">Xem</a>
+						<a href='{{url("/admin/mathang/$mathang->id/show")}}' class="btn btn-info" target="_blank">Xem</a>
 						<a href='{{url("/admin/mathang/$mathang->id/edit")}}' class="btn btn-danger">Sửa</a>
 						
 						<form method="POST" action='{{url("/admin/mathang/$mathang->id/delete")}}' style="display: inline-block">
