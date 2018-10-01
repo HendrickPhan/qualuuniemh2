@@ -3,8 +3,8 @@
 
 
 <div class="container">
-	<div class="themLoaiMatHang">
-		<h1>Thêm loại mặt hàng</h1>
+	<div class="them">
+		<h1>Thêm mặt hàng</h1>
 		<hr>
 		<form action="{{url('/admin/loaimathang/create')}}" method="POST">
 			@if($errors->has('TenLoaiMatHang'))

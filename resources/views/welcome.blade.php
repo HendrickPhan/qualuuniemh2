@@ -4,41 +4,18 @@
 		<div class="hp_fullwidth_img">
 			<h2>H2 MANG CẢ THẾ GIỚI ĐẾN VỚI NHÀ CỦA BẠN</h2>
 		</div>
-
-
-		
 		<div class="section1">
 			<div class="container">
 				<h1>Hàng nghìn những món đồ lưu niệm</h1>
 				<div class="row">
-					@foreach 
+					@foreach ($loaimathangs as $loaimathang)
 					<a href="" class="col-md-4 hp_s1_product">
-						<img src="/upload/$_20.JPG">
-						<h4>Kiểu mặt hàng 1</h4>
+						<img src="{{$loaimathang->hinhAnh}}">
+						<h4>{{$loaimathang->TenLoaiMatHang}}</h4>
 					</a>
-					<a href="" class="col-md-4 hp_s1_product">
-						<img src="/upload/$_20.JPG">
-						<h4>Kiểu mặt hàng 2</h4>
-					</a>
-					<a href="" class="col-md-4 hp_s1_product">
-						<img src="/upload/$_20.JPG">
-						<h4>Kiểu mặt hàng 3</h4>
-					</a>
+					@endforeach
 				</div>
-				<div class="row">
-					<a href="" class="col-md-4 hp_s1_product">
-						<img src="/upload/$_20.JPG">
-						<h4>Kiểu mặt hàng 4</h4>
-					</a>
-					<a href="" class="col-md-4 hp_s1_product">
-						<img src="/upload/$_20.JPG">
-						<h4>Kiểu mặt hàng 5</h4>
-					</a>
-					<a href="" class="col-md-4 hp_s1_product">
-						<img src="/upload/$_20.JPG">
-						<h4>Kiểu mặt hàng 6</h4>
-					</a>
-				</div>
+				
 			</div>
 		</div>
 		

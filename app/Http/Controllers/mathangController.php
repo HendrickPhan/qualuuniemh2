@@ -23,8 +23,9 @@ class MatHangController extends Controller
 	public function create_admin()
     {
      	 //
+		 $mathangs = MatHang::all();
 		 $loaimathangs = LoaiMatHang::all();
-		 return view('admin/mathang/create',['loaimathangs' => $loaimathangs]);
+		 return view('admin/mathang/create',['mathangs' => $mathangs,'loaimathangs'=>$loaimathangs]);
     }
 	public function store_admin(Request $request)
     {
