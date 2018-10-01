@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', 'HomeController@render');
 
 Route::get('/forget_password', function () {
     return view('forget_password');
@@ -70,9 +71,22 @@ Route::post('/admin/mathang/{id}/edit','MatHangController@update_admin')
 	->middleware('is_admin');
 Route::post('/admin/mathang/{id}/delete','MatHangController@destroy')
 	->middleware('is_admin');
-	
-	
-Route::get('/themmathang', 'MatHangController@create_admin');
+// Xử lý các thao tác của admin với loại mặt hàng
+Route::get('/admin/loaimathang','LoaiMatHangController@index_admin')
+	->middleware('is_admin');
+Route::get('/admin/loaimathang/{id}/show','LoaiMatHangController@show_admin')
+->middleware('is_admin');
+Route::get('/admin/loaimathang/create','LoaiMatHangController@create_admin')
+	->middleware('is_admin');
+Route::post('/admin/loaimathang/create','LoaiMatHangController@store_admin')
+	->middleware('is_admin');
+Route::get('/admin/loaimathang/{id}/edit','LoaiMatHangController@edit_admin')
+	->middleware('is_admin');
+Route::post('/admin/loaimathang/{id}/edit','LoaiMatHangController@update_admin')
+	->middleware('is_admin');
+Route::post('/admin/loaimathang/{id}/delete','LoaiMatHangController@destroy')
+	->middleware('is_admin');
+
 
 //Xử lý giỏ hàng ở front page
 Route::get('/giohang',function () {

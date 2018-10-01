@@ -31,7 +31,7 @@
 						
 						<form method="POST" action='{{url("/admin/loaimathang/$loaimathang->id/delete")}}' style="display: inline-block">
 							<input type="hidden" value="$loaimathang->id" name="delete_user" />
-							<button onclick="return confirm('Bạn có chắc muốn xóa loại mặt hàng này không?')" class="btn btn-secondary">
+							<button onclick="return confirm('Bạn có chắc muốn xóa loại mặt hàng này không? Tất cả các mặt hàng của loại mặt hàng này cũng sẽ bị xóa')" class="btn btn-secondary">
 							Xóa
 							</button>
 							{!! csrf_field() !!}

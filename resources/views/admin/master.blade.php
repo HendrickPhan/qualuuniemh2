@@ -39,13 +39,13 @@
 							<a href="{{url('/admin/mathang')}}"><b>Mặt hàng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
-							<a href=""><b>Loại mặt hàng</b></a>
+							<a href="{{url('/admin/loaimathang')}}"><b>Loại mặt hàng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
-							<a href=""><b>Đơn hàng</b></a>
+							<a href="{{url('/admin/donhang')}}"><b>Đơn hàng</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">
-							<a href=""><b>Phí dịch vụ</b></a>
+							<a href="{{url('/admin/phidichvu')}}"><b>Phí dịch vụ</b></a>
 						</div>
 						<div class="nav-quanli col-md-2">							
 								<li><img src="/upload/sign_out.png" width="25" height="25"/><a href="{{url('/')}}">Trang chủ</a></li>			

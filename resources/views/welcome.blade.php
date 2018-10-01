@@ -11,6 +11,7 @@
 			<div class="container">
 				<h1>Hàng nghìn những món đồ lưu niệm</h1>
 				<div class="row">
+					@foreach 
 					<a href="" class="col-md-4 hp_s1_product">
 						<img src="/upload/$_20.JPG">
 						<h4>Kiểu mặt hàng 1</h4>

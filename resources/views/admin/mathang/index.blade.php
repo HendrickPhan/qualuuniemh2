@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div>
-		<h1> Quản lý người dùng</h1>
+		<h1> Quản lý mặt hàng</h1>
 		
 		<hr>
 	</div>
@@ -17,6 +17,7 @@
 						<th>ID</th>
 						<th>Tên mặt hàng</th>
 						<th>Giá</th>
+						<th>Loại mặt hàng</th>
 						<th>Số lượng tồn</th>
 						<th>Hành động</th>
 					</tr>
@@ -27,6 +28,13 @@
 						<td>{{$mathang->id}}</td>
 						<td>{{$mathang->TenMatHang}}</td>
 						<td>{{$mathang->Gia}}</td>
+						<td>
+						@foreach ($loaimathangs as $loaimathang)
+							@if($loaimathang->id == $mathang->idLoaiMatHang)
+								{{$loaimathang->TenLoaiMatHang}}
+							@endif
+						@endforeach
+						</td>
 						<td>{{$mathang->SoLuongTon}}</td>
 						<td>
 						

@@ -13,7 +13,7 @@
 			@endif
 			<div class="form-group">
 				<label for="tenloaimathang">Tên loại mặt hàng:</label>
-				<input type="text" name="tenloaimathang" id="tenloaimathang" class="form-control" value="{{$loaimathang->tenloaimathang}}">
+				<input type="text" name="TenLoaiMatHang" id="TenLoaiMatHang" class="form-control" value="{{$loaimathang->TenLoaiMatHang}}" required>
 			</div>
 			<div class="form-group">
 				<button class="btn btn-info" type="submit" id="loginbutton">Sửa đổi</button>

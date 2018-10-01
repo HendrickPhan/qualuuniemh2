@@ -17,7 +17,8 @@ class MatHangController extends Controller
     {
         // for admin page
 		$mathangs = MatHang::all();
-		return view('admin/mathang/index',['mathangs' => $mathangs]);
+		$loaimathangs = LoaiMatHang::all();
+		return view('admin/mathang/index',['mathangs' => $mathangs,'loaimathangs'=>$loaimathangs]);
     }
 	public function create_admin()
     {
@@ -65,7 +66,7 @@ class MatHangController extends Controller
     {
         //
 		$mathang = MatHang::where('id','=',$id)->first();
-		$hinhanhs = HinhAnh::where('idContainer','=',$id)->get();
+		$hinhanhs = HinhAnh::where([['idContainer','=',$id],['type','=','mathang']])->get();
 		$loaimathangs = LoaiMatHang::all();
 		return view('admin/mathang/edit',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs, 'loaimathangs'=>$loaimathangs]);
     }
@@ -73,7 +74,7 @@ class MatHangController extends Controller
 	public function show($id)
     {
         $mathang = MatHang::where('id','=',$id)->first();
-		$hinhanhs = HinhAnh::where('idContainer','=',$id)->get();
+		$hinhanhs = HinhAnh::where([['idContainer','=',$id],['type','=','mathang']])->get();
 		$loaimathang = LoaiMatHang::where('id','=',$mathang->idLoaiMatHang)->first();
 		return view('/mathang/show',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs, 'loaimathang'=>$loaimathang]);
 
@@ -123,7 +124,7 @@ class MatHangController extends Controller
 			return redirect()->back();
 		}
     }
-	public function destroy($id)
+	public static function destroy($id)
     {
         //
 		$mathang = MatHang::where('id','=',$id)->first();
