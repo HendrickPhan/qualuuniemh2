@@ -28,7 +28,7 @@ class DonHang extends Model
 	public $messages = [
 		'NgayDatHang.required' => 'Ngày đặt hàng là trường bắt buộc',
 		'NgayGiaoHang.required' => 'Ngày giao hàng là trường bắt buộc',
-		'idChiTietDonHang' => 'ID Chi tiết đơn hàng là trường bắt buộc',
+		'idChiTietDonHang.required' => 'ID Chi tiết đơn hàng là trường bắt buộc',
 		'idNguoiDung.required' => 'ID người dùng là trường bắt buộc',
 		'ThanhTien.required' => 'Tổng tiền là trường bắt buộc',
 		'PhuongThucThanhToan.required' => 'Phương thức thanh toán là trường bắt buộc',

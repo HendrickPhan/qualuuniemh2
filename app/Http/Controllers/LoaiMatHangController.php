@@ -17,97 +17,38 @@ class LoaiMatHangController extends Controller
 		$loaimathangs = LoaiMatHang::all();
 		return view('admin/loaimathang/index',['loaimathangs' => $loaimathangs]);
     }
-	public function create_admin()
-    {
-     	 //
-		 return view('admin/mathang/create');
-    }
 	public function store_admin(Request $request)
     {
-        $user = new User;
-		$validator = Validator::make($request->all(), $user->rules, $user->messages);
+        $loaimathang = new LoaiMatHang;
+		$validator = Validator::make($request->all(), $loaimathang->rules, $loaimathang->messages);
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
-    	} else {
-			$request['Role']=2;
-			$request['Active']=0;
-			$user = User::create(request([
-				'username',
-				'email', 
-				'password',
-				'HoVaTen', 
-				'NgaySinh', 
-				'SoDienThoai', 
-				'GioiTinh', 
-				'DiaChi', 
-				'ThanhPho',
-				'Quan',
-				'Role',
-				'Active'
+    	} else {			
+			$loaimathang = LoaiMatHang::create(request([
+				 'TenLoaiMatHang', 
 			]));
-			return redirect('/admin/nguoidung');
+			return redirect('/admin/loaimathang');
 		}
-    }
-	public function show_admin($id)
-    {
-        //
-		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		return view('admin/loaimathang/show',['user' => $user]);
     }
 	public function edit_admin($id)
     {
         //
 		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
 		return view('admin/loaimathang/edit',['loaimathang' => $loaimathang]);
-    }
-	
-	
-	
-	public function create()
+    }	
+	public function create_admin()
     {
         //
-		return view('user/create');
+		 $loaimathangs = LoaiMatHang::all();
+		return view('loaimathang/create',['loaimathangs' => $loaimathangs]);
     }
-	public function store(Request $request)
-    {
-        //
-		$user = new User;
-		$validator = Validator::make($request->all(), $user->rules, $user->messages);
-		if ($validator->fails()) {
-    		return redirect()->back()->withErrors($validator)->withInput();
-    	} else {
-			$request['Role']=2;
-			$request['Active']=0;
-			$user = User::create(request([
-				'username',
-				'email', 
-				'password',
-				'HoVaTen', 
-				'NgaySinh', 
-				'SoDienThoai', 
-				'GioiTinh', 
-				'DiaChi', 
-				'ThanhPho',
-				'Quan',
-				'Role',
-				'Active'
-			]));
-			
-			auth()->login($user);
-			return redirect('/');
-		}
-    }
-	public function show($id)
+	public function show_admin($id)
     {
         $loaimathang = LoaiMatHang::where('id','=',$id)->first();
 		return view('/loaimathang/show',['loaimathang' => $loaimathang]);
 
     }
-	public function edit($id)
-    {
-        //
-    }
-	public function update(Request $request, $id)
+	public function update_admin(Request $request, $id)
     {
         //
 		$loaimathang = LoaiMatHang::where('id','=',$id)->first();

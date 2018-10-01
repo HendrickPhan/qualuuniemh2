@@ -20,32 +20,27 @@ class DonHangController extends Controller
 	public function create_admin()
     {
      	 //
-		 return view('admin/mathang/create');
+		 
+		$donhangs = DonHang::all();
+		 return view('admin/donhang/create',['donhangs' => $donhangs]);
     }
 	public function store_admin(Request $request)
     {
-        $user = new User;
-		$validator = Validator::make($request->all(), $user->rules, $user->messages);
+        $donhang = new DonHang;
+		$validator = Validator::make($request->all(), $donhang->rules, $donhang->messages);
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
-			$request['Role']=2;
-			$request['Active']=0;
-			$user = User::create(request([
-				'username',
-				'email', 
-				'password',
-				'HoVaTen', 
-				'NgaySinh', 
-				'SoDienThoai', 
-				'GioiTinh', 
-				'DiaChi', 
-				'ThanhPho',
-				'Quan',
-				'Role',
-				'Active'
-			]));
-			return redirect('/admin/nguoidung');
+			$donhang = DonHang::create(request([
+				'NgayDatHang',
+				'NgayGiaoHang',
+				'idChiTietDonHang',
+				'idNguoiDung',
+				'ThanhTien',
+				'PhuongThucThanhToan',
+				'PhuongThucGiaoTien',
+			]));			
+			return redirect('/admin/donhang');
 		}
     }
 	public function show_admin($id)
@@ -59,74 +54,33 @@ class DonHangController extends Controller
         //
 		$donhang = DonHang::where('id','=',$id)->first();
 		return view('admin/donhang/edit',['donhang' => $donhang]);
-    }
-	
-	
-	
-	public function create()
+    }	
+	public function update_admin(Request $request, $id)
     {
         //
-		return view('user/create');
-    }
-	public function store(Request $request)
-    {
-        //
-		$user = new User;
-		$validator = Validator::make($request->all(), $user->rules, $user->messages);
+		$donhang = DonHang::where('id','=',$id)->first();
+		
+		
+		$validator = Validator::make($request->all(), $donhang->rules, $donhang->messages);
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
-			$request['Role']=2;
-			$request['Active']=0;
-			$user = User::create(request([
-				'username',
-				'email', 
-				'password',
-				'HoVaTen', 
-				'NgaySinh', 
-				'SoDienThoai', 
-				'GioiTinh', 
-				'DiaChi', 
-				'ThanhPho',
-				'Quan',
-				'Role',
-				'Active'
-			]));
-			
-			auth()->login($user);
-			return redirect('/');
-		}
-    }
-	public function show($id)
-    {
-        $loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		return view('/loaimathang/show',['mathang' => $loaimathang]);
-
-    }
-	public function edit($id)
-    {
-        //
-    }
-	public function update(Request $request, $id)
-    {
-        //
-		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		
-		
-		$validator = Validator::make($request->all(), $loaimathang->rules, $loaimathang->messages);
-		if ($validator->fails()) {
-    		return redirect()->back()->withErrors($validator)->withInput();
-    	} else {
-			$loaimathang->TenLoaiMatHang = $request['TenLoaiMatHang'];
-			$loaimathang->save();
+			$donhang->NgayDatHang = $request['NgayDatHang'];
+			$donhang->NgayGiaoHang = $request['NgayGiaoHang'];
+			$donhang->idChiTietDonHang = $request['idChiTietDonHang'];
+			$donhang->idNguoiDung = $request['idNguoiDung'];
+			$donhang->ThanhTien = $request['ThanhTien'];
+			$donhang->PhuongThucThanhToan = $request['PhuongThucThanhToan'];
+			$donhang->PhuongThucGiaoTien = $request['PhuongThucGiaoTien'];
+			$donhang->save();
 			return redirect()->back();
 		}
     }
 	public function destroy($id)
     {
         //
-		$loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		$loaimathang->delete();
+		$donhang = DonHang::where('id','=',$id)->first();
+		$donhang->delete();
 		return redirect()->back();
     }
 }
