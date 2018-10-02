@@ -26,8 +26,8 @@ class MatHang extends Model
 		'TenMatHang.required' => 'Tên mặt hàng là trường bắt buộc',
 		'Gia.required' => 'Giá là trường bắt buộc',
 		'Gia.numeric' => 'Giá không hợp lệ',
-		'SoLuongTon.required' => 'Tên đăng nhập là trường bắt buộc',
-		'idLoaiMatHang.required' => 'Tên đăng nhập là trường bắt buộc',
+		'SoLuongTon.required' => 'Số lượng tồn là trường bắt buộc',
+		'idLoaiMatHang.required' => 'Loại mặt hàng là trường bắt buộc',
 	];
 	
 	protected $table = "mathang";

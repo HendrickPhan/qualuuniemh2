@@ -56,6 +56,8 @@ Route::post('/admin/nguoidung/{id}/delete','UserController@destroy')
 
 // Xử lý mặt hàng ở front page
 Route::get('/mathang/{id}', 'MatHangController@show');
+//Xử lý loại mặt hàng ở front page
+Route::get('/loaimathang/{id}', 'LoaiMatHangController@show');
 //Xử lý loại mặt hàng ở admin page
 Route::get('/admin/mathang','MatHangController@index_admin')
 	->middleware('is_admin');
