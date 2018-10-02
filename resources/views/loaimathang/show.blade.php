@@ -10,12 +10,12 @@
 						<div class="product-info">
 							<h1>{{$mathang->TenMatHang}}<h1>
 							<div class="owl-carousel owl-theme">
-							@foreach($mathang->HinhAnh as $hinhanh)
-								<div class="main_img item">
-									<img src="{{$hinhanh}}">
+							@foreach($mathang['HinhAnh'] as $HinhAnh)
+								<div class="item">
+									<img src="{{$HinhAnh->URL}}">
 								</div>
 							@endforeach
-				</div>
+							</div>
 						</div>
 					</div>
 				@endforeach

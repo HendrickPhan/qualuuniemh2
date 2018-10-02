@@ -33,8 +33,8 @@
 					<div class="col-sm-3">
 						<h3>Follow Us</h3>
 						</br>
-						<a href="https://www.facebook.com/phandinhminh.hieu" target="_blank"><img src="upload/facebook.png"/></a>
-						<a href="https://plus.google.com/110251690083587542042" target="_blank"><img src="upload/google.png"/></a>
+						<a href="https://www.facebook.com/phandinhminh.hieu" target="_blank"><img src="/upload/facebook.png"/></a>
+						<a href="https://plus.google.com/110251690083587542042" target="_blank"><img src="/upload/google.png"/></a>
 					</div>
 				</div>
 			</div>

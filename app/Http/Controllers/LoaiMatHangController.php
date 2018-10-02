@@ -58,13 +58,9 @@ class LoaiMatHangController extends Controller
 		$mathangs = MatHang::where('idLoaiMatHang','=',$loaimathang->id)->get();
 		$mathangs = MatHang::take(10)->get();
 		foreach($mathangs as $index=>$mathang){
-			$mathangs[$index]['HinhAnh'] = [];
-			$hinhanhs = HinhAnh::where('idContainer','=',$mathang->id)->get();
-			foreach($hinhanhs as $hinhanh){
-				$mathangs[$index]['HinhAnh'][] = $hinhanh->URL;
-				
-				
-			}
+			
+			$hinhanhs = HinhAnh::where([['idContainer','=',$mathang->id],['type','=','mathang']])->get();
+			$mathangs[$index]['HinhAnh'] = $hinhanhs;
 		}
 		
 		return view('/loaimathang/show',['loaimathang' => $loaimathang,'mathangs' => $mathangs]);
