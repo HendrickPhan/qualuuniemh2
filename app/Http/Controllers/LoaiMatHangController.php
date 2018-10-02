@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Support\MessageBag;
 use App\Model\LoaiMatHang;
 use App\Model\MatHang;
+use App\Model\HinhAnh;
 
 class LoaiMatHangController extends Controller
 {
@@ -54,8 +55,19 @@ class LoaiMatHangController extends Controller
 	public function show($id)
     {
         $loaimathang = LoaiMatHang::where('id','=',$id)->first();
-		return view('/loaimathang/show',['loaimathang' => $loaimathang]);
-
+		$mathangs = MatHang::where('idLoaiMatHang','=',$loaimathang->id)->get();
+		$mathangs = MatHang::take(10)->get();
+		foreach($mathangs as $index=>$mathang){
+			$mathangs[$index]['HinhAnh'] = [];
+			$hinhanhs = HinhAnh::where('idContainer','=',$mathang->id)->get();
+			foreach($hinhanhs as $hinhanh){
+				$mathangs[$index]['HinhAnh'][] = $hinhanh->URL;
+				
+				
+			}
+		}
+		
+		return view('/loaimathang/show',['loaimathang' => $loaimathang,'mathangs' => $mathangs]);
     }
 
 	public function update_admin(Request $request, $id)
