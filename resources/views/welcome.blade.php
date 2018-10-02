@@ -24,40 +24,23 @@
 				<h1>Sản phẩm nổi bật</h1>
 				<!----------------Chỗ này sẽ làm slider carosel-------------------->
 				
-				<div class="row">
-					<div class="col-md-3 hp_s2_product">
-						<a href="">
-							<img src="/upload/$_20.JPG">
-							<div>Mặt hàng 1</div>
+				<div class="row owl-carousel">
+				
+				@foreach($mathangs as $mathang)
+					<div class="hp_s2_product item">
+						<a href="/mathang/{{$mathang->id}}">
+							<img src="{{$mathang->HinhAnh}}">
+							<h4><b>{{$mathang->TenMatHang}}</b></h4>
+							<div>Giá: <b>{{$mathang->Gia}}</b></div>
 						</a>
+						
 						Đánh giá:<span class="rating"> 7.6</span></br>
 						<button class="btn btn-warning add_to_cart_btn"><h5>Thêm vào giỏ</h5></button>
 					</div>
-					<div class="col-md-3 hp_s2_product">
-						<a href="">
-							<img src="/upload/$_20.JPG">
-							<div>Mặt hàng 1</div>
-						</a>
-						Đánh giá:<span class="rating"> 7.6</span></br>
-						<button class="btn btn-warning add_to_cart_btn"><h5>Thêm vào giỏ</h5></button>
-					</div>
-					<div class="col-md-3 hp_s2_product">
-						<a href="">
-							<img src="/upload/$_20.JPG">
-							<div>Mặt hàng 1</div>
-						</a>
-						Đánh giá:<span class="rating"> 7.6</span></br>
-						<button class="btn btn-warning add_to_cart_btn"><h5>Thêm vào giỏ</h5></button>
-					</div>
-					<div class="col-md-3 hp_s2_product">
-						<a href="">
-							<img src="/upload/$_20.JPG">
-							<div>Mặt hàng 1</div>
-						</a>
-						Đánh giá:<span class="rating"> 7.6</span></br>
-						<button class="btn btn-warning add_to_cart_btn"><h5>Thêm vào giỏ</h5></button>
-					</div>
+				@endforeach
 				</div>
+				
+				
 			</div>
 		</div>
 		

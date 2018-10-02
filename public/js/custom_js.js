@@ -11,6 +11,21 @@ $( document ).ready(function() {
 			}
 		}
 	})
-	 $('.datatable').DataTable();
+	
+	
+	
+	$('#hp .owl-carousel').owlCarousel({
+		loop:true,
+		margin:10,
+		autoplay:true,
+		autoplayTimeout:3000,
+		responsive:{
+			1000:{
+				items: 4
+			}
+		}
+	})
+	
+	$('.quanly .datatable').DataTable();
 	
 });

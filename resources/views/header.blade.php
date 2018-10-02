@@ -24,6 +24,10 @@
 		<link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
 		<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 		
+		<!-- Data Table -->
+		<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+		
     </head>
     <body>
 	<header>
@@ -50,7 +54,7 @@
 							@endif
 						@else
 						<li><img src="/upload/sign_in.png" width="25" height="25"/><a href="{{url('login')}}"> Đăng nhập</a></li>
-						<li><img src="/upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
+						<li><img src="/upload/product.png" width="25" height="25"/><a href="{{url('giohang')}}"> Giỏ hàng</a></li>
 						@endif
 					</div>
 				</div>

@@ -27,6 +27,11 @@ class HomeController extends Controller
 		
 		
 		$mathangs = MatHang::take(10)->get();
+		foreach($mathangs as $index=>$mathang){
+			$hinhanh =[];
+			$hinhanh = HinhAnh::where([['idContainer',$mathang['id']],['type','mathang']])->first();
+			$mathangs[$index]['HinhAnh'] = $hinhanh['URL'];
+		}
 		return view('welcome',['loaimathangs' => $loaimathangs,'mathangs' => $mathangs]);
 	}
 }
