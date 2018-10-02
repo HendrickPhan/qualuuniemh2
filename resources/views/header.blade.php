@@ -50,7 +50,7 @@
 							@if($user->Role==1)
 								<li><img src="/upload/sign_in.png" width="25" height="25"/><a href="{{url('admin')}}"> Admin page</a></li>
 							@else
-								<li><img src="/upload/product.png" width="25" height="25"/><a href=""> Giỏ hàng</a></li>
+								<li><img src="/upload/product.png" width="25" height="25"/><a href="{{url('giohang')}}"> Giỏ hàng</a></li>
 							@endif
 						@else
 						<li><img src="/upload/sign_in.png" width="25" height="25"/><a href="{{url('login')}}"> Đăng nhập</a></li>
