@@ -9,7 +9,7 @@
 				<h1>Hàng nghìn những món đồ lưu niệm</h1>
 				<div class="row">
 					@foreach ($loaimathangs as $loaimathang)
-					<a href="" class="col-md-4 hp_s1_product">
+					<a href="/loaimathang/{{$loaimathang->id}}" class="col-md-4 hp_s1_product">
 						<img src="{{$loaimathang->hinhAnh}}">
 						<h4>{{$loaimathang->TenLoaiMatHang}}</h4>
 					</a>

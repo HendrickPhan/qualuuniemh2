@@ -38,8 +38,11 @@
 						<a href="{{url('/')}}"><img src="/upload/logo.png" width="50" height="50"></a>
 					</div>
 					<div class="col-md-5" id="search-menu">
-						<input type="text" placeholder=" Tìm sản phẩm" id="searchproduct"/>
-						<button class="btn" type="button" id="searchbutton"><b>Tìm</b></button>
+						<form action="{{url('search')}}" id="search-form" method="POST">
+							<input type="text" placeholder=" Tìm sản phẩm" id="searchproduct"/>
+							<button class="btn" id="searchbutton"><b>Tìm</b></button>
+							{!! csrf_field() !!}
+						</form>
 					</div>
 					<div class="col-md-5" id="info-menu">
 						

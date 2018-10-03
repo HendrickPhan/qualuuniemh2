@@ -24,7 +24,7 @@ class LoaiMatHangController extends Controller
      	 //
 		 return view('admin/loaimathang/create');
     }
-	public function store_admin(Request $request)
+	public function store_admin(	 $request)
     {
         $loaimathang = new LoaiMatHang;
 		$validator = Validator::make($request->all(), $loaimathang->rules, $loaimathang->messages);
@@ -56,7 +56,6 @@ class LoaiMatHangController extends Controller
     {
         $loaimathang = LoaiMatHang::where('id','=',$id)->first();
 		$mathangs = MatHang::where('idLoaiMatHang','=',$loaimathang->id)->get();
-		$mathangs = MatHang::take(10)->get();
 		foreach($mathangs as $index=>$mathang){
 			
 			$hinhanhs = HinhAnh::where([['idContainer','=',$mathang->id],['type','=','mathang']])->get();

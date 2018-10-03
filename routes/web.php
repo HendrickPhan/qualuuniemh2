@@ -94,3 +94,5 @@ Route::post('/admin/loaimathang/{id}/delete','LoaiMatHangController@destroy')
 Route::get('/giohang',function () {
     return view('cart');
 });;
+//Xử lý tìm kiếm của người dùng
+Route::post('/search', 'SearchController@show');
