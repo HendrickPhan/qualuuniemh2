@@ -35,7 +35,7 @@
 						</a>
 						
 						Đánh giá:<span class="rating"> 7.6</span></br>
-						<button class="btn btn-warning add_to_cart_btn"><h5>Thêm vào giỏ</h5></button>
+						<button class="btn btn-warning add_to_cart_btn" value="{{$mathang->id}}"><h5>Thêm vào giỏ</h5></button>
 					</div>
 				@endforeach
 				</div>
@@ -43,11 +43,13 @@
 				
 			</div>
 		</div>
-		
+
 		<div class="section3">
 			<a href="">
 			<h1>Tặng quà</h1>
 			<a/>
 		</div>
 	</div>
+	
+
 @endsection

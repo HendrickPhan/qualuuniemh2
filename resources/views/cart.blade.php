@@ -1,5 +1,7 @@
 @extends('master')
 	@section('content')
+	
+	<?php var_dump($mathangs);?>
 	<div id="giohang_contain" class="container">
 		
 		<div class="giohang-info">

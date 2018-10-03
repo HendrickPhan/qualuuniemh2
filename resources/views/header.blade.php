@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		
+		<meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Hàng lưu niệm H2</title>
 			
         <!-- Fonts -->
@@ -54,7 +54,18 @@
 							@endif
 						@else
 						<li><img src="/upload/sign_in.png" width="25" height="25"/><a href="{{url('login')}}"> Đăng nhập</a></li>
-						<li><img src="/upload/product.png" width="25" height="25"/><a href="{{url('giohang')}}"> Giỏ hàng</a></li>
+						<li><a href="{{url('giohang')}}"><img src="/upload/product.png" width="25" height="25"/>
+							<span id="total_cart_items"><?php
+							if(session('Cart')){
+								$total_cart_items = 0;
+
+								foreach(session('Cart') as $product){
+									$total_cart_items += $product[1];
+								}
+								echo $total_cart_items ;
+							}
+							?></span>
+						</a></li>
 						@endif
 					</div>
 				</div>

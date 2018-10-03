@@ -400,5 +400,10 @@ header .header-menu .nav-quanli a{
 	width:100%;
 	height: 200px;
 	object-fit: cover;
-	
+}
+#total_cart_items{
+	color:red;
+	font-weight: bold;
+	position: relative;
+	top: -5px;
 }
