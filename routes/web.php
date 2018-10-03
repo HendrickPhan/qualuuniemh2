@@ -99,7 +99,8 @@ Route::post('/AddToCart','Ajax@AddToCart');
 Route::get('/AddToCart','Ajax@AddToCart');
 
 
-
+//Xử lý tìm kiếm của người dùng
+Route::post('/search', 'SearchController@show');
 
 
 
