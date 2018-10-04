@@ -93,6 +93,10 @@ Route::post('/admin/loaimathang/{id}/delete','LoaiMatHangController@destroy')
 //Xử lý giỏ hàng ở front page
 Route::get('/giohang',function () {
     return view('cart');
-});;
+});
+//Xử lý checkout ở front page
+Route::get('/checkout',function () {
+    return view('checkout');
+});
 //Xử lý tìm kiếm của người dùng
 Route::post('/search', 'SearchController@show');

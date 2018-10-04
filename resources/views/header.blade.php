@@ -39,7 +39,7 @@
 					</div>
 					<div class="col-md-5" id="search-menu">
 						<form action="{{url('search')}}" id="search-form" method="POST">
-							<input type="text" placeholder=" Tìm sản phẩm" id="searchproduct"/>
+							<input type="text" placeholder="Tìm sản phẩm" id="searchproduct" name="searchproduct"/>
 							<button class="btn" id="searchbutton"><b>Tìm</b></button>
 							{!! csrf_field() !!}
 						</form>

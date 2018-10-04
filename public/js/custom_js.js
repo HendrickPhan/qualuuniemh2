@@ -37,7 +37,19 @@ $( document ).ready(function() {
 				items: 1
 			}
 		}
-	})
+	});
+	
+	$('#search_contain .owl-carousel').owlCarousel({
+		loop:true,
+		margin:10,
+		autoplay:true,
+		autoplayTimeout:3000,
+		responsive:{
+			1000:{
+				items: 1
+			}
+		}
+	});
 	
 	$('.quanly .datatable').DataTable();
 	

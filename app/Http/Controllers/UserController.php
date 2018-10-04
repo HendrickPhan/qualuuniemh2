@@ -132,8 +132,6 @@ class UserController extends Controller
 			$user->DiaChi = $request['DiaChi'];
 			$user->ThanhPho = $request['ThanhPho'];
 			$user->Quan = $request['Quan'];
-
-
 			$user->save();
 			return redirect()->back();
 		}

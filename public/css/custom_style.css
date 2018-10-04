@@ -238,7 +238,7 @@ text-align: center;
 	text-align: center;
 	margin-bottom: 20px;
 }
-#login button, #register button{
+#login button, #register button, .button_checkout{
 	font-family: 'Pacifico', cursive;
 	font-size: 20px;
 }
@@ -449,4 +449,14 @@ header .header-menu .nav-quanli a{
 .product_elements p,h3{
 	font-size:20px;
 	font-family: 'Sedgwick Ave', cursive;
+}
+
+.registered_customer {
+	margin: 50px auto;
+	width: fit-content;
+	border: 1px solid #ddd	;
+}
+
+.registered_customer h5{
+	margin-top:10px;
 }
