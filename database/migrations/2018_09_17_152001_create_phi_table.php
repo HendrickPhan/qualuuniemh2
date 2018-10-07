@@ -15,7 +15,7 @@ class CreatePhiTable extends Migration
     {
         Schema::create('phi', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('LoaiPhi');
+            $table->string('LoaiPhi');
 			$table->integer('Gia');
         });
     }

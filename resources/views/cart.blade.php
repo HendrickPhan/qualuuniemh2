@@ -1,7 +1,6 @@
 @extends('master')
 	@section('content')
-	
-	<?php var_dump($mathangs);?>
+
 	<div id="giohang_contain" class="container">
 		
 		<div class="giohang-info">
@@ -13,21 +12,27 @@
 						<th>Giá</th>
 						<th>Số lượng</th>
 						<th>Thành tiền</th>
-						<th>Hành động</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
+				@foreach($mathangs as $mathang)
 					<tr>
-						<th>Mặt hàng 1</th>
-						<th>100.000VND</th>
-						<th>5</th>
-						<th>500.000VND</th>
-						<th>
-							<a href='' class="btn btn-info">Xem</a>
-							<a href="" class="btn btn-danger">Sửa</a>
-							<a href="" class="btn btn-secondary">Xóa</a>
-						</th>
+						<td>{{$mathang->TenMatHang}}</td>
+						<td>{{$mathang->Gia}} VNĐ</td>
+						<td>{{$mathang->SoLuong}}</td>
+						<td>{{$mathang->ThanhTien}} VNĐ</td>
+						<td>
+
+							<form method="POST" action='{{url("/giohang/$mathang->id/delete")}}' style="display: inline-block">
+								<button onclick="return confirm('Bạn có chắc muốn xóa mặt hàng này không?')" class="btn btn-secondary">
+								Xóa
+								</button>
+								{!! csrf_field() !!}
+							</form>
+						</td>
 					</tr>
+				@endforeach
 				</tbody>
 			</table>
 		</div>
@@ -36,12 +41,12 @@
 			</div>
 			<div class="col-md-4 calculating">
 				<div class="calculating_element">
-					<p><b>Tổng tiền:</b></p>
-					<p><b>Thuế phát sinh(VAT,..):</b></p>
-					<p><b>Phí vận chuyển:</b></p>
+					<p><b>Tổng tiền:</b> {{$TongTienChuaThue}} VNĐ</p>
+					<p><b>Thuế phát sinh(VAT,..):</b> {{$VAT}}  VNĐ</p>
+					<p><b>Phí vận chuyển:</b> {{$PhiVanChuyen}} VNĐ</p>
 				</div>
 				<div class="total_calculating">
-					<p><b>Tổng tất cả:</b></p>
+					<p><b>Tổng tất cả:</b> {{$TongTien}} VNĐ</p>
 				</div>
 			</div> 
 		</div>

@@ -31,7 +31,7 @@
 						<a href="/mathang/{{$mathang->id}}">
 							<img src="{{$mathang->HinhAnh}}">
 							<h4><b>{{$mathang->TenMatHang}}</b></h4>
-							<div>Giá: <b>{{$mathang->Gia}}</b></div>
+							<div>Giá: <b>{{$mathang->Gia}} VNĐ</b></div>
 						</a>
 						
 						Đánh giá:<span class="rating"> 7.6</span></br>

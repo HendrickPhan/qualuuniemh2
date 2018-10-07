@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\MatHang;
+use App\Model\Phi;
 
 
 class GioHangController extends Controller
@@ -21,9 +22,39 @@ class GioHangController extends Controller
 				$mathangs[] = $mathang;
 			}
 		}
-		return view('cart',['mathangs' => $mathangs]);
+		
+		$TongTienChuaThue = 0;
+		$TongTien = 0;
+		
+		
+		$PhiVanChuyen = Phi::where('LoaiPhi','VanChuyen')->first();
+		$PhiVanChuyen = $PhiVanChuyen->Gia;
+		foreach($mathangs as $mathang){
+			$TongTienChuaThue += $mathang['ThanhTien'];	
+		}
+		$VAT = Phi::where('LoaiPhi','VAT')->first();
+		$VAT = $VAT->Gia * $TongTienChuaThue / 100;
+		$TongTien += $VAT + $PhiVanChuyen + $TongTienChuaThue;
+		return view('cart',['mathangs' => $mathangs,
+		'TongTienChuaThue' => $TongTienChuaThue,
+		'VAT'=> $VAT,
+		'PhiVanChuyen'=> $PhiVanChuyen,
+		'TongTienChuaThue'=> $TongTienChuaThue,
+		'TongTien' => $TongTien
+		]);
 	}
 	
+	public function destroy(Request $request, $id){
+		$data = session('Cart');
+		foreach($data as $index => $product){
+			if($product[0] == $id){
+				unset($data[$index]);
+			}
+		}
+		$request->session()->put('Cart', $data);
+		
+		return redirect('/giohang');
+	}
 }
 	
 	

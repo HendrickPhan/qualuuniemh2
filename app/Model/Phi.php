@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ThacMac extends Model
+class Phi extends Model
 {
     //
 	protected $fillable = [
@@ -19,6 +19,6 @@ class ThacMac extends Model
 		'LoaiPhi.required' => 'Loại phí là trường bắt buộc',
 		'GiaTri.required' => 'Giá trị là trường bắt buộc',
 	];
-	protected $table = "thacmac";
+	protected $table = "phi";
 	public $timestamps = false;
 }

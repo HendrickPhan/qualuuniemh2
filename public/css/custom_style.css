@@ -128,6 +128,7 @@ text-align: center;
 	width: 100%;
 	height: 200px;
 	object-fit:cover;
+	object-position: 50% 0;
 }
 .rating{
 	font-size: 20px;
@@ -285,6 +286,7 @@ font-size: 1.5rem;
 	width: 100%;
 	height: 450px;
 	object-fit: cover;
+	object-position: 50% 0;
 	
 }
 header .header-menu .nav-quanli a{
@@ -420,6 +422,7 @@ header .header-menu .nav-quanli a{
 	width: 400px !important;
 	height: 400px !important;
 	object-fit: cover;
+	object-position: 50% 0;
 	
 }
 
@@ -428,13 +431,14 @@ header .header-menu .nav-quanli a{
 	height:250px;
 	object-fit:cover;
 	opacity: 0.5;
+	object-position: 50% 0;
 	
 }
 .product-info img{
 	width:100%;
 	height: 200px;
 	object-fit: cover;
-	
+	object-position: 50% 0;
 }
 
 .type_header {

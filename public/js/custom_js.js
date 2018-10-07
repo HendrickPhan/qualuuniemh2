@@ -38,11 +38,6 @@ $( document ).ready(function() {
 			}
 		}
 	})
-	
-	$('.quanly .datatable').DataTable();
-	
-	
-	
 	//ajax for addtocart
 	
 	$('.add_to_cart_btn').click(function(){
@@ -64,11 +59,12 @@ $( document ).ready(function() {
 					total_cart_items = parseInt( $('#total_cart_items').text() );
 				}
 				total_cart_items += 1;
-				
 				$('#total_cart_items').text(total_cart_items);
 			}
 		});
 		
 		
 	});
+
+	$('.quanly .datatable').DataTable();
 });

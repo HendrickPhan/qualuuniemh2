@@ -24,7 +24,7 @@ class LoaiMatHangController extends Controller
      	 //
 		 return view('admin/loaimathang/create');
     }
-	public function store_admin(	 $request)
+	public function store_admin(Request $request)
     {
         $loaimathang = new LoaiMatHang;
 		$validator = Validator::make($request->all(), $loaimathang->rules, $loaimathang->messages);
