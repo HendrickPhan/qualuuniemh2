@@ -93,7 +93,9 @@ Route::post('/admin/loaimathang/{id}/delete','LoaiMatHangController@destroy')
 //Xử lý giỏ hàng ở front page
 Route::get('/giohang','GioHangController@show');
 
-
+Route::get('/checkout',function () {
+    return view('checkout');
+});
 //Ajax 
 Route::post('/AddToCart','Ajax@AddToCart');
 Route::get('/AddToCart','Ajax@AddToCart');
