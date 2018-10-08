@@ -476,5 +476,11 @@ header .header-menu .nav-quanli a{
 
 .button_checkout{
 	margin-top:20px;
-	margin-left:40px;
+}
+
+#iduser_checkout,#email_checkout,#address_checkout,#phone_checkout,#date_of_delivery{
+	width:100%;
+}
+#total_checkout{
+	text-align:right;
 }

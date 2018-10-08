@@ -55,8 +55,8 @@
 				<div class="col-md-8">
 				</div>
 				<div class="col-md-4">
-					<button class="btn btn-default returnbutton">Tiếp tục mua hàng</button>
-					<button class="btn btn-success checkoutbutton">Checkout đơn hàng</button>
+					<a href="{{url('/')}}" class="btn btn-secondary returnbutton">Tiếp tục mua hàng</a>
+					<a href="{{url('/checkout')}}" class="btn btn-success checkoutbutton">Checkout đơn hàng</a>
 				</div>
 					
 			
