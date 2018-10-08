@@ -1,8 +1,8 @@
 html, body{
-	font-family:'Nunito', sans-serif;
+	font-family: 'Varela Round', sans-serif;
 }
 h1,h2,h3,h4,h5,h6{
-	font-family: 'Pacifico', cursive;
+	font-family: 'Varela Round', sans-serif;
 }
 header .header-menu{
 	padding-top:15px;
@@ -241,7 +241,7 @@ text-align: center;
 	margin-bottom: 20px;
 }
 #login button, #register button, .button_checkout{
-	font-family: 'Pacifico', cursive;
+	font-family: 'Varela Round', sans-serif;
 	font-size: 20px;
 }
 #login footer{
@@ -275,7 +275,7 @@ text-align: center;
 	padding-left: 5px;
 }
 #register .login-contain form label{
-	font-family: 'Pacifico', cursive;
+	font-family: 'Varela Round', sans-serif;
 font-size: 1.5rem;
 }
 #mathang_contain .section1 .main_img{
@@ -453,7 +453,7 @@ header .header-menu .nav-quanli a{
 }
 .product_elements p,h3{
 	font-size:20px;
-	font-family: 'Sedgwick Ave', cursive;
+	font-family: 'Varela Round', sans-serif;
 }
 #total_cart_items{
 	color:red;

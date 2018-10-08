@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-		
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 		<!-- CSS -->
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">

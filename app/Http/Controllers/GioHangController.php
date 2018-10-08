@@ -10,7 +10,7 @@ use App\Model\Phi;
 class GioHangController extends Controller
 {
     //
-	public function show(){
+	public function show(Request $request){
 		$data = session('Cart');
 		$mathangs= [];
 		if($data!=null){
@@ -35,6 +35,7 @@ class GioHangController extends Controller
 		$VAT = Phi::where('LoaiPhi','VAT')->first();
 		$VAT = $VAT->Gia * $TongTienChuaThue / 100;
 		$TongTien += $VAT + $PhiVanChuyen + $TongTienChuaThue;
+		$request->session()->put('TongTien', $TongTien);
 		return view('cart',['mathangs' => $mathangs,
 		'TongTienChuaThue' => $TongTienChuaThue,
 		'VAT'=> $VAT,
