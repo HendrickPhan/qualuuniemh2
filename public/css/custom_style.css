@@ -466,8 +466,21 @@ header .header-menu .nav-quanli a{
 	margin: 50px auto;
 	width: fit-content;
 	border: 1px solid #ddd	;
+	padding:40px 60px;
+	background-color: #eee;
 }
 
 .registered_customer h5{
 	margin-top:10px;
+}
+
+.button_checkout{
+	margin-top:20px;
+}
+
+#iduser_checkout,#email_checkout,#address_checkout,#phone_checkout,#date_of_delivery{
+	width:100%;
+}
+#total_checkout{
+	text-align:right;
 }
