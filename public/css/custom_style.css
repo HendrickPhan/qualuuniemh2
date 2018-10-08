@@ -466,8 +466,15 @@ header .header-menu .nav-quanli a{
 	margin: 50px auto;
 	width: fit-content;
 	border: 1px solid #ddd	;
+	padding:40px 60px;
+	background-color: #eee;
 }
 
 .registered_customer h5{
 	margin-top:10px;
+}
+
+.button_checkout{
+	margin-top:20px;
+	margin-left:40px;
 }
