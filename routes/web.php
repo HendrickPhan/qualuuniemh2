@@ -33,6 +33,7 @@ Route::post('/register', 'UserController@store');
 
 
 
+
 	
 Route::get('/admin', function(){
 	return view('admin/dashboard');
@@ -103,6 +104,8 @@ Route::post('/giohang/{id}/delete','GioHangController@destroy');
 
 //Xử lý tìm kiếm của người dùng
 Route::post('/search', 'SearchController@show');
+//Xử lý comment
+Route::post('/comment','DanhGiasController@store');
 
 
 

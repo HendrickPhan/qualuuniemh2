@@ -390,7 +390,6 @@ header .header-menu .nav-quanli a{
 }
 #mathang_contain .section2 .danhgia .comment .comment-content{
 	color: #666;
-	padding-left:50px;
 }
 #mathang_contain .section2 .danhgia .comment .user-avatar{
 	width:50px;
@@ -402,9 +401,7 @@ header .header-menu .nav-quanli a{
 	height:50px;
 }
 
-#mathang_contain .section2 .cauhoi .btn-ask{
-	margin-top:10px;
-}
+
 
 #mathang_contain .section2 .cauhoi .ask-header{
 	margin-top:10px;
@@ -483,4 +480,10 @@ header .header-menu .nav-quanli a{
 }
 #total_checkout{
 	text-align:right;
+}
+#rating{
+	margin-top:10px;	
+}
+.rating-input{
+	width:80px;
 }

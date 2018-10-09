@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DonHang extends Model
+class DanhGia extends Model
 {
     //
 	protected $fillable = [
