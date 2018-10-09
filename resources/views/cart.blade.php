@@ -56,7 +56,7 @@
 				</div>
 				<div class="col-md-4">
 					<a href="{{url('/')}}" class="btn btn-secondary returnbutton">Tiếp tục mua hàng</a>
-					<a href="{{url('/checkout')}}" class="btn btn-success checkoutbutton">Checkout đơn hàng</a>
+					<a href="{{url('/thanhtoan')}}" class="btn btn-success checkoutbutton">Checkout đơn hàng</a>
 				</div>
 					
 			

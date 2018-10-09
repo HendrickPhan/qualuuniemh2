@@ -18,7 +18,7 @@
 					<label  for="date_of_delivery">Ngày giao hàng:</label><br>
 					<input type="text" id="date_of_delivery" name="date_of_delivery"><br>
 					<h5 id="total_checkout"><b>Tổng tiền:</b>   <span>1235</span></h5>
-					<a href="{{url('/cart')}}"class="btn btn-secondary button_checkout">Quay lại</a>
+					<a href="{{url('/giohang')}}"class="btn btn-secondary button_checkout">Quay lại</a>
 					<button class="btn btn-success button_checkout">Check out</button>				
 				</form>	
 			</div>	

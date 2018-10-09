@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use Auth;
 
 class ThanhToanController extends Controller
 {
     //
 	public function show(Request $request){
-		$id = Auth::user()->id;
-		if($id){
+		
+		if(Auth::check()){
+			$id = Auth::user()->id;
 			$user = User::where('id','=',$id)->first();
 		}
 		else{
-			$user = null;
+			$user = [];
 		}
 		
 		return view('checkout',['user' => $user]);

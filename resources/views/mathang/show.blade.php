@@ -33,8 +33,8 @@
 				</div>
 				<div class="add_to_card form-group">
 					<label class="">Số lượng:</label> 
-					<input class="soluong form-control" type="number" name="soluong" max="99" min="1"/>
-					<button class="btn addToCartBtn" id="addToCart">Thêm vào giỏ</button>
+					<input class="soluong form-control" type="number" name="soluong" max="99" min="1" id="soluong" value="1"/>
+					<button class="btn btn-warning add_to_cart_btn_with_quantity" id="addToCart" value="{{$mathang->id}}">Thêm vào giỏ</button>
 				</div>
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 		<div class="section2">
 			<div class="container">
 				<div class="danhgia">
-					<h3>Đánh giá</h3>
+					<h3>Bình Luận: </h3>
 					
 					<div class="comment row">
 						<div class="col-md-1"> 
@@ -79,7 +79,7 @@
 				</div>
 					
 				<div class="cauhoi">
-					<h3 class="ask-header">Câu hỏi</h3>
+					<h3 class="ask-header">Thêm bình luận: </h3>
 					<div>
 						<textarea class="form-control ask-field" row="5" cols="50" placeholder="Đặt câu hỏi?"></textarea>
 						<button class="btn btn-ask" type="button"><b>Gửi câu hỏi</b> </button>

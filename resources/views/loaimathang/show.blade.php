@@ -21,7 +21,7 @@
 								<h3>Tên mặt hàng: {{$mathang->TenMatHang}}<h3>
 								<p>Xuất xứ: {{$mathang->XuatXu}}</p>
 								<p>Giá: {{$mathang->Gia}}</p>
-								<button class="btn btn-warning add_to_cart_btn"><h5>Thêm vào giỏ</h5></button>
+								<button class="btn btn-warning add_to_cart_btn" value="{{$mathang->id}}"><h5>Thêm vào giỏ</h5></button>
 							</div>
 						</div>
 					</div>
