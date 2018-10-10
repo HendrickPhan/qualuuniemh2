@@ -43,48 +43,37 @@
 		<div class="section2">
 			<div class="container">
 				<div class="danhgia">
-					<h3>Bình Luận: </h3>
-					
+					<h3>Đánh giá</h3>
+					@foreach($danhgias as $danhgia)
 					<div class="comment row">
 						<div class="col-md-1"> 
 							<img class="user-avatar" href="#" src="/upload/user_avatar.jpg"/>
 						</div>
 						<div class="col-md-11">
-							<a><b>Người dùng 1</b><a/></br>
-							<a class="comment-content">Mặt hàng này rất đẹp và bền</a>
+						@foreach($danhgia['KhachHang'] as $KhachHang)
+							<p><b>{{$KhachHang->username}}</b><p/>
+							<p class="comment-content" >{{$danhgia->NoiDung}}</p>
+						@endforeach
 						</div>
 					</div>
-					
-					<div class="comment row">
-						<div class="col-md-1"> 
-							<img class="user-avatar" href="#" src="/upload/user_avatar.jpg"/>
-						</div>
-						<div class="col-md-11">
-							<a><b>Người dùng 2</b><a/></br>
-							<a class="comment-content">Đoán xem</a>
-						</div>
-					</div>
-					
-					
-					<div class="comment row">
-						<div class="col-md-1"> 
-							<img class="user-avatar" href="#" src="/upload/user_avatar.jpg"/>
-						</div>
-						<div class="col-md-11">
-							<a><b>Người dùng 3</b><a/></br>
-							<a class="comment-content">Mặt hàng này rất đẹp và bền</a>
-						</div>
-					</div>
-					
+					@endforeach
 				</div>
-					
+				@if (Auth::check())
 				<div class="cauhoi">
-					<h3 class="ask-header">Thêm bình luận: </h3>
+					<label class="ask-header">Bình luận</label>
 					<div>
-						<textarea class="form-control ask-field" row="5" cols="50" placeholder="Đặt câu hỏi?"></textarea>
-						<button class="btn btn-ask" type="button"><b>Gửi câu hỏi</b> </button>
+						<form action="{{url('comment')}}" id="comment-form" method="POST">
+							<input type="hidden" name="idMatHang" value= "{{$mathang->id}}">
+							<input type="hidden" name="idKhachHang" value= "{{Auth::user()->id}}">			
+							<textarea class="form-control ask-field" row="5" cols="50" placeholder="Bạn cảm thấy như thế nào về mặt hàng này?" name="NoiDung"></textarea>
+							<label id="rating">Đánh giá</label>
+							<input class="form-control rating-input" type="number" min="1" max="10" step="1" name="Rating" ><br>
+							<button class="btn btn-ask" type="submit"><b>Gửi đánh giá</b> </button>
+							{!! csrf_field() !!}
+						</form>
 					</div>
 				</div>
+				@endif
 			</div>
 		</div>
 	</div>

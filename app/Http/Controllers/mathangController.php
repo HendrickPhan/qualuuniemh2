@@ -9,6 +9,8 @@ use Illuminate\Support\MessageBag;
 use App\Model\MatHang;
 use App\Model\LoaiMatHang;
 use App\Model\HinhAnh;
+use App\Model\DanhGia;
+use App\User;
 
 class MatHangController extends Controller
 {
@@ -75,9 +77,14 @@ class MatHangController extends Controller
 	public function show($id)
     {
         $mathang = MatHang::where('id','=',$id)->first();
-		$hinhanhs = HinhAnh::where([['idContainer','=',$id],['type','=','mathang']])->get();
+		$hinhanhs = HinhAnh::where([['idContainer','=',$id],['type','=','mathang']])->get(); 	
+		$danhgias = DanhGia::where([['idMatHang','=',$id]])->get(); 
+		foreach($danhgias as $index=>$danhgia){			
+			$user = User::where([['id','=',$danhgia->idKhachHang]])->get();
+			$danhgias[$index]['KhachHang'] = $user;
+		}
 		$loaimathang = LoaiMatHang::where('id','=',$mathang->idLoaiMatHang)->first();
-		return view('/mathang/show',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs, 'loaimathang'=>$loaimathang]);
+		return view('/mathang/show',['mathang' => $mathang, 'hinhanhs'=>$hinhanhs, 'loaimathang'=>$loaimathang,'danhgias'=>$danhgias]);
 
     }
 	public function update_admin(Request $request, $id)
