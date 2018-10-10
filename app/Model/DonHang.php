@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,10 +20,10 @@ class DonHang extends Model
 		'NgayDatHang' =>'required',
 		'NgayGiaoHang' => 'required|date',
 		'idChiTietDonHang' => 'required',
-		'idNguoiDung' => 'required'
-		'ThanhTien' => 'required|numeric'
-		'PhuongThucThanhToan' => 'required'
-		'PhuongThucGiaoTien' => 'required'
+		'idNguoiDung' => 'required',
+		'ThanhTien' => 'required|numeric',
+		'PhuongThucThanhToan' => 'required',
+		'PhuongThucGiaoTien' => 'required',
 	];
 	public $messages = [
 		'NgayDatHang.required' => 'Ngày đặt hàng là trường bắt buộc',

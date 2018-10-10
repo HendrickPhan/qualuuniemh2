@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/thanks', function () {
+    return view('thanks');
+});
 Route::get('/', 'HomeController@render');
 
 Route::get('/forget_password', function () {
@@ -89,7 +92,9 @@ Route::post('/admin/loaimathang/{id}/edit','LoaiMatHangController@update_admin')
 	->middleware('is_admin');
 Route::post('/admin/loaimathang/{id}/delete','LoaiMatHangController@destroy')
 	->middleware('is_admin');
-
+//Xử lý các thao tác của admin với đơn hàng
+Route::get('/admin/donhang','DonHangController@index_admin')
+	->middleware('is_admin');
 
 //Xử lý giỏ hàng ở front page
 Route::get('/giohang','GioHangController@show');
