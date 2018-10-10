@@ -36,6 +36,8 @@ class GioHangController extends Controller
 		$VAT = $VAT->Gia * $TongTienChuaThue / 100;
 		$TongTien += $VAT + $PhiVanChuyen + $TongTienChuaThue;
 		$request->session()->put('TongTien', $TongTien);
+		$request->session()->put('VAT', $VAT);
+		$request->session()->put('PhiVanChuyen', $PhiVanChuyen);
 		return view('cart',['mathangs' => $mathangs,
 		'TongTienChuaThue' => $TongTienChuaThue,
 		'VAT'=> $VAT,

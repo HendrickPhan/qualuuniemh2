@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DonHang extends Model
+class DanhGia extends Model
 {
     //
 	protected $fillable = [

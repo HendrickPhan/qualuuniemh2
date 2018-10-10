@@ -464,10 +464,14 @@ header .header-menu .nav-quanli a{
 
 .registered_customer {
 	margin: 50px auto;
-	width: fit-content;
+	width: 40%;
 	border: 1px solid #ddd	;
 	padding:40px 60px;
 	background-color: #eee;
+}
+.registered_customer input{
+	padding: 5px;
+	line-height: 1;
 }
 
 .registered_customer h5{

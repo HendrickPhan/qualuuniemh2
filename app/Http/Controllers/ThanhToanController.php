@@ -10,15 +10,14 @@ class ThanhToanController extends Controller
 {
     //
 	public function show(Request $request){
-		
 		if(Auth::check()){
 			$id = Auth::user()->id;
 			$user = User::where('id','=',$id)->first();
 		}
 		else{
-			$user = [];
+			 $user = new User;
 		}
-		
-		return view('checkout',['user' => $user]);
+		$TongTien = session('TongTien');
+		return view('checkout',['user' => $user,'TongTien' => $TongTien]);
 	}
 }

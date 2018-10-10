@@ -8,6 +8,9 @@ use Auth;
 use Illuminate\Support\MessageBag;
 use App\User;
 
+use App\DonHang;
+use App\ChiTietDonHang;
+
 class DonHangController extends Controller
 {
 	
@@ -82,5 +85,52 @@ class DonHangController extends Controller
 		$donhang = DonHang::where('id','=',$id)->first();
 		$donhang->delete();
 		return redirect()->back();
+    }
+	public function store(Request $request)
+    {
+		
+        //
+		$donhang = new DonHang;
+
+			
+		$TongTien = session('TongTien');
+		$VAT = session('VAT');
+		$PhiVanChuyen = session('PhiVanChuyen');
+		$TrangThai = "DANGXULY";
+		
+		$donhang->NgayDatHang = date("Y-m-d H:i:s");
+		$donhang->NgayGiaoHang = date("Y-m-d H:i:s", strtotime('+ 2 days'));
+		
+		if(Auth::check()){
+			$donhang->idNguoiDung = Auth::user()->id;
+		}
+		$donhang->HoVaTen = $request['HoVaTen'];
+		$donhang->Email = $request['Email'];
+		$donhang->DiaChi = $request['DiaChi'];
+		$donhang->SoDienThoai = $request['SoDienThoai'];
+		$donhang->TongTien = $TongTien;
+		$donhang->VAT = $VAT;
+		$donhang->PhiVanChuyen = $PhiVanChuyen;
+		$donhang->TrangThai = $TrangThai;
+		$donhang->save();
+		
+		
+		
+		$matHangs = session('Cart');
+		foreach($matHangs as $matHang){
+			$ChiTietDonHang = new ChiTietDonHang;
+			$ChiTietDonHang->idDonHang = $donhang->id;
+			$ChiTietDonHang->idMatHang = $matHang[0];
+			$ChiTietDonHang->SoLuong = $matHang[1];
+			$ChiTietDonHang->save();
+
+		}
+
+		$request->session()->forget('TongTien');
+		$request->session()->forget('VAT');
+		$request->session()->forget('PhiVanChuyen');
+		$request->session()->forget('Cart');
+
+		return redirect('/');
     }
 }

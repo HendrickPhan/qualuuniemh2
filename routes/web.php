@@ -100,7 +100,9 @@ Route::get('/AddToCart','Ajax@AddToCart');
 Route::post('/giohang/{id}/delete','GioHangController@destroy');
 
 //Xử lý tìm kiếm của người dùng
-Route::post('/search', 'SearchController@show');
+Route::post('/complete-checkout', 'DonHangController@store');
+
+
 
 
 

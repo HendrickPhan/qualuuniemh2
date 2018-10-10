@@ -69,7 +69,7 @@
 			@endif
 			<div class="form-group">
 				<label for="SoDienThoai">Số điện thoại:</label>
-				<input type="number" id="SoDienThoai" name="SoDienThoai" class="form-control" value="{{old('SoDienThoai')}}" required >
+				<input type="text" id="SoDienThoai" name="SoDienThoai" class="form-control" value="{{old('SoDienThoai')}}" required >
 			</div>
 			@if($errors->has('email'))
 				<div class="form-group">

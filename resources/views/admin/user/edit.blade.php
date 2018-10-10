@@ -50,7 +50,7 @@
 			@endif
 			<div class="form-group">
 				<label for="SoDienThoai">Số điện thoại:</label>
-				<input type="number" name="SoDienThoai" id="SoDienThoai" class="form-control" value="{{$user->SoDienThoai}}">
+				<input type="text" name="SoDienThoai" id="SoDienThoai" class="form-control" value="{{$user->SoDienThoai}}">
 			</div>
 			@if($errors->has('email'))
 			<tr>

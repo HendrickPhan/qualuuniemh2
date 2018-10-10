@@ -84,7 +84,7 @@
 							@endif
 							<tr>
 								<td><label for="SoDienThoai">Số điện thoại:</label></td>
-								<td><input type= "number" id="SoDienThoai" name="SoDienThoai" placeholder="0987654321" value="{{old('SoDienThoai')}}" required /></br></td>
+								<td><input type= "text" id="SoDienThoai" name="SoDienThoai" placeholder="0987654321" value="{{old('SoDienThoai')}}" required /></br></td>
 							</tr>
 							@if($errors->has('email'))
 							<tr>

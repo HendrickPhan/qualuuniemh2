@@ -15,9 +15,10 @@ class CreateChitietdonhangTable extends Migration
     {
         Schema::create('chitietdonhang', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('idMatHang',50);
+			$table->integer('idMatHang');
+			$table->integer('idDonHang');
 			$table->integer('SoLuong');
-			$table->integer('DichVu');
+			$table->string('DichVu')->nullable();
         });
     }
 

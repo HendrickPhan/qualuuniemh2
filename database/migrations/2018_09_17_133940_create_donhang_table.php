@@ -17,11 +17,15 @@ class CreateDonhangTable extends Migration
             $table->increments('id');
 			$table->date('NgayDatHang');
 			$table->date('NgayGiaoHang');
-			$table->string('idChiTietDonHang',50);
-			$table->string('idNguoiDung',50);
-			$table->integer('ThanhTien');
-			$table->integer('PhuongThucThanhToan');
-			$table->integer('PhuongThucGiaoHang');
+			$table->string('idNguoiDung',50)->nullable();;
+			$table->string('HoVaTen');
+			$table->string('Email');
+			$table->string('DiaChi');
+			$table->string('SoDienThoai');
+			$table->integer('TongTien');
+			$table->integer('VAT');
+			$table->integer('PhiVanChuyen');
+			$table->string('TrangThai');
         });
     }
 
