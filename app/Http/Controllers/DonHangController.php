@@ -7,10 +7,9 @@ use Validator;
 use Auth;
 use Illuminate\Support\MessageBag;
 use App\User;
-use App\Model\DonHang;
-
 use App\DonHang;
 use App\ChiTietDonHang;
+use App\Model\MatHang;
 
 class DonHangController extends Controller
 {
@@ -51,13 +50,25 @@ class DonHangController extends Controller
     {
         //
 		$donhang = DonHang::where('id','=',$id)->first();
-		return view('admin/donhang/show',['donhang' => $donhang]);
+		$chitietdonhangs =ChiTietDonHang::where('idDonHang','=',$id)->get();
+		foreach($chitietdonhangs as $index=>$chitietdonhang){
+			
+			$mathang = MatHang::where([['id','=',$chitietdonhang->idMatHang]])->get();
+			$chitietdonhangs[$index]['MatHang'] = $mathang;
+		}
+		return view('admin/donhang/show',['donhang' => $donhang],['chitietdonhangs'=>$chitietdonhangs]);
     }
 	public function edit_admin($id)
     {
         //
 		$donhang = DonHang::where('id','=',$id)->first();
-		return view('admin/donhang/edit',['donhang' => $donhang]);
+		$chitietdonhangs =ChiTietDonHang::where('idDonHang','=',$id)->get();
+		foreach($chitietdonhangs as $index=>$chitietdonhang){
+			
+			$mathang = MatHang::where([['id','=',$chitietdonhang->idMatHang]])->get();
+			$chitietdonhangs[$index]['MatHang'] = $mathang;
+		}
+		return view('admin/donhang/edit',['donhang' => $donhang],['chitietdonhangs'=>$chitietdonhangs]);
     }	
 	public function update_admin(Request $request, $id)
     {
@@ -132,6 +143,6 @@ class DonHangController extends Controller
 		$request->session()->forget('PhiVanChuyen');
 		$request->session()->forget('Cart');
 
-		return redirect('/');
+		return redirect('/thanks');
     }
 }

@@ -94,7 +94,10 @@ Route::post('/admin/loaimathang/{id}/delete','LoaiMatHangController@destroy')
 //Xử lý các thao tác của admin với đơn hàng
 Route::get('/admin/donhang','DonHangController@index_admin')
 	->middleware('is_admin');
-
+Route::get('/admin/donhang/{id}/show','DonHangController@show_admin')
+->middleware('is_admin');
+Route::get('/admin/donhang/{id}/edit','DonHangController@edit_admin')
+->middleware('is_admin');
 //Xử lý giỏ hàng ở front page
 Route::get('/giohang','GioHangController@show');
 
