@@ -4,12 +4,12 @@
 
 <div class="container">
 	<div>
-		<h1> Quản lý loại mặt hàng</h1>
+		<h1> Quản lý đơn hàng</h1>
 		
 		<hr>
 	</div>
 	<div class="quanly" >
-		<a href='{{url("/admin/loaimathang/create")}}' class="btn btn-success addbutton">Thêm loại mặt hàng</a>
+		<!--<a href='{{url("/admin/loaimathang/create")}}' class="btn btn-success addbutton">Thêm loại mặt hàng</a>-->
 		<div class="producttype-info">
 			<table class="datatable" id="table_id" >
 				<thead>

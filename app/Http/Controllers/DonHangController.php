@@ -7,6 +7,7 @@ use Validator;
 use Auth;
 use Illuminate\Support\MessageBag;
 use App\User;
+use App\Model\DonHang;
 
 use App\DonHang;
 use App\ChiTietDonHang;
