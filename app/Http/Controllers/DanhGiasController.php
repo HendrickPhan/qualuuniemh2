@@ -38,6 +38,7 @@ class DanhGiasController extends Controller
 				'Rating', 
 			]));
 		}
+		return redirect()->back();
 	 }
 	public function destroy($id)
     {

@@ -36,7 +36,6 @@
 						<td>
 						
 						<a href='{{url("/admin/donhang/$donhang->id/show")}}' class="btn btn-info">Xem</a>
-						<a href='{{url("/admin/donhang/$donhang->id/edit")}}' class="btn btn-danger">Sửa</a>
 						
 						<form method="POST" action='{{url("/admin/donhang/$donhang->id/delete")}}' style="display: inline-block">
 							<input type="hidden" value="$donhang->id" name="delete_user" />

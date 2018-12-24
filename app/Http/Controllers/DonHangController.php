@@ -80,16 +80,22 @@ class DonHangController extends Controller
 		if ($validator->fails()) {
     		return redirect()->back()->withErrors($validator)->withInput();
     	} else {
-			$donhang->NgayDatHang = $request['NgayDatHang'];
-			$donhang->NgayGiaoHang = $request['NgayGiaoHang'];
-			$donhang->idChiTietDonHang = $request['idChiTietDonHang'];
+			$donhang->idDonHang = $request['idDonHang'];
+			$donhang->NgayGiaoHang=$request['NgayGiaoHang'];
+			$donhang->NgayDatHang=$request['NgayDatHang'];
 			$donhang->idNguoiDung = $request['idNguoiDung'];
-			$donhang->ThanhTien = $request['ThanhTien'];
-			$donhang->PhuongThucThanhToan = $request['PhuongThucThanhToan'];
-			$donhang->PhuongThucGiaoTien = $request['PhuongThucGiaoTien'];
+			$donhang->HoVaTen = $request['HoVaTen'];
+			$donhang->Email = $request['Email'];
+			$donhang->DiaChi = $request['DiaChi'];
+			$donhang->SoDienThoai = $request['SoDienThoai'];
+			$donhang->TongTien = $request['TongTien'];
+			$donhang->VAT = $request['VAT'];
+			$donhang->PhiVanChuyen = $request['PhiVanChuyen'];
+			$donhang->TrangThai = $request['TrangThai'];
 			$donhang->save();
 			return redirect()->back();
 		}
+		
     }
 	public function destroy($id)
     {

@@ -98,6 +98,10 @@ Route::get('/admin/donhang/{id}/show','DonHangController@show_admin')
 ->middleware('is_admin');
 Route::get('/admin/donhang/{id}/edit','DonHangController@edit_admin')
 ->middleware('is_admin');
+Route::post('/admin/donhang/{id}/edit','DonHangController@update_admin')
+	->middleware('is_admin');
+Route::post('/admin/donhang/{id}/delete','DonHangController@destroy')
+	->middleware('is_admin');
 //Xử lý giỏ hàng ở front page
 Route::get('/giohang','GioHangController@show');
 

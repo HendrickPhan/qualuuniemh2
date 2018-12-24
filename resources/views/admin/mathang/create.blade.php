@@ -24,7 +24,7 @@
 			@endif
 			<div class="form-group">
 				<label for="Gia">Giá mặt hàng:</label>
-				<input type="number" id="Gia"  class="form-control" name="Gia" value="{{old('Gia')}}" required />
+				<input type="number" id="Gia"  class="form-control" name="Gia" value="{{old('Gia')}}" min="1" required />
 			</div>
 
 			@if($errors->has('XuatXu'))
