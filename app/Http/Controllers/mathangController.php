@@ -121,6 +121,7 @@ class MatHangController extends Controller
 				
 			}
 			$delete_image_ids = $request['delete_image'];
+			$delete_image_ids = $delete_image_ids ? $delete_image_ids: [];
 			foreach($delete_image_ids as $delete_image_id){
 				
 				$hinhanh = HinhAnh::where('id','=',$delete_image_id)->first();
