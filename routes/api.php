@@ -22,6 +22,7 @@ use Illuminate\Http\Request;
 	Route::post('/login', 'Api\AuthController@login')->name('login.api');
     Route::post('/register', 'Api\AuthController@register')->name('register.api');
 	Route::get('/home', 'Api\HomeController@index');
+	Route::get('/listMatHang/{id}', 'Api\MatHangController@get_all_of_type');
 	Route::middleware('auth:api')->group(function () {
         Route::get('/logout', 'Api\AuthController@logout')->name('logout');
         
