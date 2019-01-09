@@ -13,6 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::group(['middleware' => ['json.response']], function () {
+
+	
+	Route::middleware('auth:api')->get('/user', function (Request $request) {
+		return $request->user();
+	});
+	Route::post('/login', 'Api\AuthController@login')->name('login.api');
+    Route::post('/register', 'Api\AuthController@register')->name('register.api');
+	Route::get('/home', 'Api\HomeController@index');
+	Route::get('/listMatHang/{id}', 'Api\MatHangController@get_all_of_type');
+	Route::middleware('auth:api')->group(function () {
+        Route::get('/logout', 'Api\AuthController@logout')->name('logout');
+        
+    });
+	
+//});
