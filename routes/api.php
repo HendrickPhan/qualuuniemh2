@@ -27,5 +27,6 @@ use Illuminate\Http\Request;
         Route::get('/logout', 'Api\AuthController@logout')->name('logout');
         
     });
+	Route::get('/cart/{id}', 'Api\CartController@index');
 	
 //});
