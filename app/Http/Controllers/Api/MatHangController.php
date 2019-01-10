@@ -18,7 +18,7 @@ class MatHangController extends Controller
 		// $response = $request->user();
 		// return response($response, 200);
 	// }
-	public function get_all_of_type ($id) {
+	public function get_all_of_type($id) {
 		$return = [];
 		$mathangs = MatHang::where('idLoaiMatHang', $id)->get();
 		foreach($mathangs as $index=>$mathang){
@@ -26,7 +26,17 @@ class MatHangController extends Controller
 			$hinhanh = HinhAnh::where([['idContainer',$mathang['id']],['type','mathang']])->first();
 			$mathangs[$index]['HinhAnh'] = $hinhanh['URL'];
 		}
-		$return = $mathangs;
+		$return['mathang'] = $mathangs;
+		return response($return, 200);
+	}
+	
+	public function get_item_data($id) {
+		$return = [];
+		$mathang = MatHang::where('id', $id)->first	();
+		$hinhanhs = HinhAnh::select('url')->where([['idContainer',$mathang->id],['type','mathang']])->get();
+		
+		$return['data'] = $mathang;
+		$return['images'] = $hinhanhs;
 		return response($return, 200);
 	}
 }
