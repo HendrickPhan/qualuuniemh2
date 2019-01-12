@@ -15,7 +15,7 @@ class AuthController extends Controller
 
 		if ($validator->fails())
 		{
-			return response(['errors'=>$validator->errors()->all()], 422);
+			return response(['status'=>422,'errors'=>$validator->errors()->all()], 422);
 		}
 
 		$request['Role']=2;
@@ -36,7 +36,7 @@ class AuthController extends Controller
 		]));
 
 		$token = $user->createToken('Laravel Password Grant Client')->accessToken;
-		$response = ['token' => $token];
+		$response = ['status'=>200,'token' => $token,'id'=>$user->id];
 
 		return response($response, 200);
 	}
@@ -52,15 +52,15 @@ class AuthController extends Controller
 		if ($user) {
 			if( Auth::attempt(['username' => $username, 'password' =>$password])) {
 				$token = $user->createToken('Laravel Password Grant Client')->accessToken;
-				$response = ['token' => $token];
+				$response = ['status'=>1,'token' => $token,'id' => $user->id];
 				return response($response, 200);
 			} else {
-				$response = "Password missmatch";
+				$response = ['status'=>0,'error' =>'Password missmatch'];
 				return response($response, 422);
 			}
 
 		} else {
-			$response = 'User does not exist';
+			$response = ['status'=>0,'error' =>'User does not exist'];
 			return response($response, 422);
 		}
 	}

@@ -13,16 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['middleware' => ['json.response']], function () {
+//Route::group(['middleware' => ['json.response']], function () {
 
 	
 	Route::middleware('auth:api')->get('/user', function (Request $request) {
-		return $request->user();
+		return ['errors'=>['status'=>200],'info'=>$request->user()];
 	});
-	Route::post('/login', 'Api\AuthController@login')->name('login.api');
-    Route::post('/register', 'Api\AuthController@register')->name('register.api');
+	Route::post('/login', 'Api\AuthController@login');
+    Route::post('/register', 'Api\AuthController@register');
 	Route::get('/home', 'Api\HomeController@index');
 	Route::get('/listMatHang/{id}', 'Api\MatHangController@get_all_of_type');
+	Route::get('/listLoaiMatHang', 'Api\LoaiMatHangController@index');
 	Route::get('/matHang/{id}', 'Api\MatHangController@get_item_data');
 	
 	Route::middleware('auth:api')->group(function () {
@@ -31,4 +32,4 @@ Route::group(['middleware' => ['json.response']], function () {
     });
 	Route::get('/cart/{id}', 'Api\CartController@index');
 	
-});
+//});
