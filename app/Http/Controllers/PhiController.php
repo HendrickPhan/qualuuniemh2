@@ -8,7 +8,7 @@ use Auth;
 use Illuminate\Support\MessageBag;
 use App\User;
 
-class UserController extends Controller
+class PhiController extends Controller
 {
 	
 	public function index_admin()

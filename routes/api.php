@@ -28,8 +28,11 @@ use Illuminate\Http\Request;
 	
 	Route::middleware('auth:api')->group(function () {
         Route::get('/logout', 'Api\AuthController@logout')->name('logout');
-        
+        Route::post('/checkout1', 'Api\AuthController@logout');
     });
 	Route::get('/cart/{id}', 'Api\CartController@index');
 	
+	
+	
+	Route::post('/checkout2', 'Api\DonHangController@store2');
 //});
