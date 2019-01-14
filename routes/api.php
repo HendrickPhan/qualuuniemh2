@@ -23,12 +23,14 @@ use Illuminate\Http\Request;
     Route::post('/register', 'Api\AuthController@register');
 	Route::get('/home', 'Api\HomeController@index');
 	Route::get('/listMatHang/{id}', 'Api\MatHangController@get_all_of_type');
+	Route::get('/search/{searchWord}', 'Api\MatHangController@search');
 	Route::get('/listLoaiMatHang', 'Api\LoaiMatHangController@index');
 	Route::get('/matHang/{id}', 'Api\MatHangController@get_item_data');
 	
 	Route::middleware('auth:api')->group(function () {
         Route::get('/logout', 'Api\AuthController@logout')->name('logout');
-        Route::post('/checkout1', 'Api\AuthController@logout');
+        Route::post('/checkout1', 'Api\DonHangController@store1');
+        Route::get('/donhang', 'Api\DonHangController@get');
     });
 	Route::get('/cart/{id}', 'Api\CartController@index');
 	

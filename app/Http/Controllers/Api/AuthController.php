@@ -42,9 +42,7 @@ class AuthController extends Controller
 	}
 	
 	
-	public function login (Request $request) {
-
-		
+	public function login (Request $request) {		
 		$username = $request->input('username');
 		$password = $request->input('password');
 		$user = User::where('username', $username)->first();

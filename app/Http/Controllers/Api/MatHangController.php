@@ -22,7 +22,7 @@ class MatHangController extends Controller
 		$return = [];
 		$mathangs = MatHang::where('idLoaiMatHang', $id)->get();
 		foreach($mathangs as $index=>$mathang){
-			$hinhanh =[];
+		
 			$hinhanh = HinhAnh::where([['idContainer',$mathang['id']],['type','mathang']])->first();
 			$mathangs[$index]['HinhAnh'] = $hinhanh['URL'];
 		}
@@ -37,6 +37,16 @@ class MatHangController extends Controller
 		
 		$return['data'] = $mathang;
 		$return['images'] = $hinhanhs;
+		return response($return, 200);
+	}
+	public function search($searchWord) {
+		$return = [];
+		$mathangs = MatHang::where('TenMatHang','like','%'.$searchWord.'%')->get();
+		foreach($mathangs as $index=>$mathang){
+			$hinhanh = HinhAnh::where([['idContainer','=',$mathang->id],['type','=','mathang']])->first();
+			$mathangs[$index]['HinhAnh'] = $hinhanh['URL'];
+		}
+        $return['mathang'] = $mathangs;
 		return response($return, 200);
 	}
 }
